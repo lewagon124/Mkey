@@ -3,4 +3,6 @@ class PagesController < ApplicationController
 
   def home
   end
+  def recipe
+  end
 end
