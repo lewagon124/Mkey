@@ -1,3 +1,4 @@
 class Cart < ApplicationRecord
-  has_many :items, :orders
+  has_many :items
+  has_many :orders
 end
