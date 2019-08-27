@@ -4,7 +4,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :recipe, foreign_key: true
       t.string :content
-      t.boolean :upvote, :default =>false
       t.timestamps
     end
   end
