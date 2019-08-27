@@ -1,4 +1,4 @@
-class CreateCarts < ActiveRecord::Migration[5.2]
+class CreateCartitems < ActiveRecord::Migration[5.2]
   def change
     create_table :carts do |t|
       t.references :item, foreign_key: true

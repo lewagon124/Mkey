@@ -8,7 +8,6 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.integer :prep_time
       t.integer :cook_time
       t.references :user
-      t.references :ingredient
       t.timestamps
     end
   end
