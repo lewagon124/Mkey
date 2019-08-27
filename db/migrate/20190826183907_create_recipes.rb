@@ -5,8 +5,8 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :video
       t.string :image
       t.string :desc
-      t.timestamps :prep_time
-      t.timestamps :cook_time
+      t.integer :prep_time
+      t.integer :cook_time
       t.references :user
       t.references :ingredient
       t.timestamps
