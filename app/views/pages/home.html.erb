@@ -1,8 +1,10 @@
-
-<%= link_to 'Sign In', new_user_session_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
-<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content"></div>
+<button class='btn btn-primary btn-lg' id="button">Sign In</button>
+<div id="modal" style="display:none">
+  <div id="background" style="border:1px solid black; width:300px; height:300px;">
+    <div id="display" style="border:1px solid black; width:200px; height:200px;" >
+      <%= render "devise/sessions/new"%>
+    </div>
   </div>
 </div>
+
 
