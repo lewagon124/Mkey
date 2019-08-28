@@ -1,34 +1,4 @@
 
-<div class="row">
-  <div id="video">
-    <video autoplay muted loop id="myVideo" >
-      <source src="assets/toast.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
-<button class='btn btn-primary btn-lg' id="login-btn">Sign In</button>
-<div class="bg-modal">
-  <div class="modal-contents">
-
-    <div class="close">+</div>
-    <img src="https://richardmiddleton.me/comic-100.png" alt="">
-    <form action="">
-      <input type="text" placeholder="Name">
-      <input type="email" placeholder="E-Mail">
-      <a href="#" class="button">Submit</a>
-    </form>
-  </div>
-</div>
-
-<%= form_tag(search_path, class: "searchform") do %>
-  <%= text_field_tag :search, "Search", class: "search" %>
-  <button type="submit" class="btn btn-primary">
-    <i class="fa fa-search"></i>
-  </button>
-<% end %>
-
-=======
 <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
 <div class="bg-modal">
   <div class="close">+</div>
@@ -75,7 +45,7 @@
           Register
         </span>
 
-        <div class="container-login100-form-btn" id = "create-account">
+        <div class="container-login100-form-btn" id="create-account">
           <button class="login100-form-btn">
             Create
           </button>
@@ -86,11 +56,3 @@
     </div>
   </div>
 </div>
-
-<%= form_tag(search_path, class: "searchform") do %>
-<%= text_field_tag :search, "Search", class: "search" %>
-<button type="submit" class="btn btn-primary">
-  <i class="fa fa-search"></i>
-</button>
-<% end %>
-
