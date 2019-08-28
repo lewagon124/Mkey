@@ -1,6 +1,20 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: 'Raleway', sans-serif;
+  border-bottom: 1px solid #434343;
+  margin-left: 20px;
+  margin-right: 20px;
+
+}
+
+.navbar-lewagon .nav-link {
+  color: #434343;
+}
+
+.navbar-lewagon .nav-logo {
+  color: #FF5E68;
+  font-weight: bold;
 }
 
 .navbar-lewagon .navbar-collapse {

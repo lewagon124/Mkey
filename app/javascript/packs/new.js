@@ -1,16 +1,12 @@
 console.log("hello");
 
 // window.location
-
-const signin = document.querySelector("#button");
-signin.addEventListener("click",()=>{
-  document.querySelector("#modal").style.display = "block";
+document.getElementById('login-btn').addEventListener("click", function() {
+    document.querySelector('.bg-modal').style.display = "flex";
 });
-
-const background = document.querySelector("#background");
-background.addEventListener("click",()=>{
-  const modal = document.querySelector("#modal")
-  modal.style.display = "none";
-})
-
-
+document.querySelector('.close').addEventListener("click", function() {
+    document.querySelector('.bg-modal').style.display = "none";
+});
+document.querySelector('.bg-modal').addEventListener("click", function() {
+    document.querySelector('.bg-modal').style.display = "none";
+});
