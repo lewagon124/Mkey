@@ -5,7 +5,10 @@
   border-bottom: 1px solid #434343;
   margin-left: 20px;
   margin-right: 20px;
+}
 
+#search-bar{
+  display: inline-block;
 }
 
 .navbar-lewagon .nav-link {
@@ -23,4 +26,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+#login-btn {
+  border-radius: 40px;
+  border: 0px;
 }
