@@ -1,21 +1,21 @@
 <ul>
   <% @cartitems.each do |item| %>
   <div class="row">
-    <li>Item</li>
-    <li>Price</li>
+    <li>Product Name</li>
     <li>Quantity</li>
-    <li>Total</li>
+    <li>Sub Total</li>
   </div>
   <div class="row">
-    <li><%=item.image %></li>
-    <li><%=item.name %></li>
-    <li><%=item.price %></li>
-    <li><%=item.quantity %></li>
-    <li><%=item.total %></li>
+    <li><%=@item.image %></li>
+    <li><%=@item.name %></li>
+    <li><%=@item.price, id: "Price" %></li>
+    <li><%=@item.quantity %></li>
+    <li><%=@item.total %></li>
     <button>REMOVE</button>
   </div>
+  <% end %>
 </ul>
-<div>
+<div class="cartsummary">
   <ul>
     <li>subtotal</li>
     <li>shipping</li>
@@ -24,3 +24,9 @@
   </ul>
   <button>Checkout</button>
 </div>
+<script>
+  let price=document.querySelectorAll(#Price).value;
+  const add(price){
+    sum += price;
+  }
+</script>
