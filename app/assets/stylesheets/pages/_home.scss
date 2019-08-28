@@ -1,3 +1,63 @@
+.section {
+  // position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .video {
+    // text-align: center;
+    // font-family: $my-font;
+    // font-size: 50px;
+    // color: $mokey;
+    // // background: white;
+    // // padding: 14px;
+    // // border-radius: 4px;
+    // // margin: 16px;
+    // z-index: 1;
+    // opacity: 0.9;
+
+
+  }
+}
+
+    .color-overlay {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.9;
+
+
+    }
+
+    video {
+    // position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+      }
+
+.carousel1 {
+  height: 400px;
+  width: 100%;
+  background: white;
+}
+
+.carousel2 {
+  height: 400px;
+  width: 100%;
+  background: white;
+}
+
+
+
+
 // Specific CSS for your home-page
 // MODAL STARTS HERE //
 .bg-modal {
@@ -41,26 +101,26 @@ input {
 
 
 
-.row{
-  display:flex;
-  justify-content:center;
-  margin-top: 100px;
-  margin-right:0px;
-  margin-left:0px;
-}
-.video{
-  display:block;
-  position:absolute;
-  top:0;
-  left:0;
-  overflow:hidden;
-  z-index:-100;
-}
-#myVideo{
-  position:fixed;
-  right:0;
-  bottom:0;
-}
+// .row{
+//   display:flex;
+//   justify-content:center;
+//   margin-top: 100px;
+//   margin-right:0px;
+//   margin-left:0px;
+// }
+// .video{
+//   display:block;
+//   position:absolute;
+//   top:0;
+//   left:0;
+//   overflow:hidden;
+//   z-index:-100;
+// }
+// #myVideo{
+//   // position:fixed;
+//   right:0;
+//   bottom:0;
+// }
 
 
 * {
