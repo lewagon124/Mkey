@@ -11,3 +11,11 @@
     </form>
   </div>
 </div>
+
+<%= form_tag(search_path, class: "searchform") do %>
+  <%= text_field_tag :search, "Search", class: "search" %>
+  <button type="submit" class="btn btn-primary">
+    <i class="fa fa-search"></i>
+  </button>
+<% end %>
+

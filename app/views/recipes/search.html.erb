@@ -1,0 +1,9 @@
+<% if @recipes.present? %>
+  <% @recipes.each do |recipe| %>
+    <% recipe.name %>
+    <% recipe.video %>
+    <% recipe.desc %>
+  <% end %>
+<% else %>
+    <p>No Search Results</p>
+<% end %>

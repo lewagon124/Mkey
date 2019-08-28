@@ -1,0 +1,26 @@
+<ul>
+  <% @cartitems.each do |item| %>
+  <div class="row">
+    <li>Item</li>
+    <li>Price</li>
+    <li>Quantity</li>
+    <li>Total</li>
+  </div>
+  <div class="row">
+    <li><%=item.image %></li>
+    <li><%=item.name %></li>
+    <li><%=item.price %></li>
+    <li><%=item.quantity %></li>
+    <li><%=item.total %></li>
+    <button>REMOVE</button>
+  </div>
+</ul>
+<div>
+  <ul>
+    <li>subtotal</li>
+    <li>shipping</li>
+    <li>taxes</li>
+    <li>total</li>
+  </ul>
+  <button>Checkout</button>
+</div>
