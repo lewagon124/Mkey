@@ -2,7 +2,6 @@ footer {
   margin-left: 20px;
   margin-right: 20px;
   justify-content: space-around;
-
 }
 
 .container-footer {
@@ -18,6 +17,7 @@ footer {
   padding: 4px;
   background: none;
   color: $light;
+  font-family: $my-font;
   font-size: 14px;
 }
 
@@ -27,6 +27,7 @@ footer {
   margin-bottom: 0px;
   font-size: 14px;
   color: $med;
+  font-family: $my-font;
  }
 }
 
@@ -38,6 +39,7 @@ footer {
   a {
   font-size: 14px;
   color: $light;
+  font-family: $my-font;
     }
   }
 }
@@ -50,6 +52,7 @@ footer {
   a {
   font-size: 14px;
   color: $light;
+  font-family: $my-font;
     }
   }
 }
