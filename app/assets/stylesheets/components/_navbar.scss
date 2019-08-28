@@ -1,6 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.navbar-lewagon .nav-link {
+  color: #434343;
+}
+
+.navbar-lewagon .nav-logo {
+  color: #FF5E68;
+  font-weight: bold;
 }
 
 .navbar-lewagon .navbar-collapse {
