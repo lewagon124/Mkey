@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index,:search,:show]
   def index
     @recipe = Recipe.all
   end
@@ -10,7 +11,8 @@ class RecipesController < ApplicationController
   def search
     if params[:search].present?
       sql_query = "name ILIKE :query"
-      @recipe = Recipe.where(sql_query, query: "%#{params[:search]}%")
+      @recipes = Recipe.where(sql_query, query: "%#{params[:search]}%")
+    end
   end
 
   def new

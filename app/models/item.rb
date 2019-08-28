@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-  belong_to :cart
-  belong_to :ingredient
+  belongs_to :cartitem
+  belongs_to :ingredient
 end

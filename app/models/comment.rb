@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belong_to :recipe
-  belong_to :user
+  belongs_to :recipe
+  belongs_to :user
 end
