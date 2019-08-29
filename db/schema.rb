@@ -10,26 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_194800) do
+ActiveRecord::Schema.define(version: 2019_08_29_155119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "carts", force: :cascade do |t|
+  create_table "cartitems", force: :cascade do |t|
     t.bigint "item_id"
-    t.bigint "order_id"
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_carts_on_item_id"
-    t.index ["order_id"], name: "index_carts_on_order_id"
+    t.bigint "order_id"
+    t.index ["item_id"], name: "index_cartitems_on_item_id"
+    t.index ["order_id"], name: "index_cartitems_on_order_id"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "status", default: false
+    t.datetime "paydate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "recipe_id"
     t.string "content"
-    t.boolean "upvote", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id"
@@ -56,9 +65,15 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.json "payment"
     t.bigint "user_id"
+    t.bigint "cart_id"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -70,15 +85,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
     t.integer "prep_time"
     t.integer "cook_time"
     t.bigint "user_id"
-    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_recipes_on_ingredient_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "friend_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_relationships_on_user_id"
@@ -105,12 +119,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "carts", "items"
-  add_foreign_key "carts", "orders"
+  add_foreign_key "cartitems", "items"
+  add_foreign_key "cartitems", "orders"
+  add_foreign_key "carts", "users"
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
   add_foreign_key "ingredients", "items"
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "steps", "recipes"
