@@ -1,3 +1,5 @@
+/*==================================================================
+[ Video Banner ]*/
 .banner {
   position: relative;
   width: 100vw;
@@ -42,17 +44,111 @@
   height: 100vh;
 }
 
-.carousel1 {
-  height: 400px;
-  width: 100%;
+/*==================================================================
+[ Recipt Carouse ]*/
+
+
+.carousel-1, .carousel-2 {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.col-md-4{
+  margin: 0px;
+}
+
+/*==================================================================
+[ Hiw it works section ]*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700|Quicksand');
+
+.hiw-container {
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hiw-card p {
+  opacity: .8;
+}
+
+.hiw-card {
+  display: flex;
+  max-width: 330px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+  margin: 0px auto;
   background: white;
 }
 
-.carousel2 {
-  height: 400px;
-  width: 100%;
-  background: white;
+
+.hiw-cards {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 1;
+  margin-bottom: 30px;
 }
+
+.hiw-container-img{
+  display: flex;
+  justify-content: center;
+  max-height: 210px;
+  /* transform: translateY(20%); */
+}
+
+.btn-learn{
+  background-color: #FF5E68;
+  color: white;
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 20px;
+}
+
+/* Utilities */
+p {
+  font-family: Quicksand;
+  font-size: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: Poppins;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Quicksand;
+}
+
+
+
+.hiw-container-img img {
+  max-height: 170px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+@media (max-width: 920px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .container{
+    max-width: 800px;
+  }
+  .card{
+    max-width: 500px;
+  }
+}
+
 // Specific CSS for your home-page
 // MODAL STARTS HERE //
 
