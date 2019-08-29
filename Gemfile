@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
-
+gem 'stripe'
+gem 'money-rails'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary', '~> 1.9.1'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'

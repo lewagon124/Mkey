@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :cart do
     resources :ingredient
   end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 end
