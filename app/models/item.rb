@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :cartitem
-  belongs_to :ingredient
-  mount_uploader image, PhotoUploader
+  has_many :cartitems
+  has_many :ingredients, dependent: :destroy
+  mount_uploader :image, PhotoUploader
 end
