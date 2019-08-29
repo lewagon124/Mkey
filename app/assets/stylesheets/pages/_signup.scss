@@ -1,15 +1,19 @@
 .containersignup {
   display:flex;
-  height: 80vh;
+  // height: 80vh;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
+  font-family: $my-font;
+
 }
 
 .sign-up {
-  font-family: $my-font;
   width: 400px;
+  background: white;
+  padding: 40px;
 }
 
 #title {
   text-align: center;
 }
+
