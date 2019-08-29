@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :recipes
   has_many :relationships
   has_many :comments
+  has_many :order
 end
