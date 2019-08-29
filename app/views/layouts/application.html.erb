@@ -16,6 +16,7 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/authentication_popup' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application', 'new' %>
     <%= render 'shared/footer' %>
