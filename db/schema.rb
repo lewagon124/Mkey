@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_155119) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "price"
+    t.integer "amount_cents", default: 0, null: false
     t.string "image"
     t.boolean "condiment", default: false
     t.datetime "created_at", null: false
