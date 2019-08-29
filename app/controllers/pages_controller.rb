@@ -5,6 +5,6 @@ class PagesController < ApplicationController
       format.html
       format.js
     end
-    @user=User.new
+    @recipes = Recipe.all
   end
 end
