@@ -1,0 +1,33 @@
+.container-recipe {
+  height: 300vh;
+  display: flex;
+
+  .imagetitle {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 0 !important;
+  }
+}
+
+.recipe-pages {
+  width: 50%;
+
+  div {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
+  p {
+    width: 80%;
+    font-size: 18px;
+    line-height: 30px;
+   }
+  }
+}
