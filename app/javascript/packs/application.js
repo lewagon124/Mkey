@@ -4,7 +4,7 @@ function validate() {
 
   if (searchform) {
     searchform.addEventListener("submit",(event) => {
-      var check = document.querySelector("#search-bar").value;
+      var check = document.querySelector(".button").value;
 
       if (check === null || check === '') {
         event.preventDefault();

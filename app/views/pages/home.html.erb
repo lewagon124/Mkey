@@ -20,7 +20,8 @@
 <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
 <div class="bg-modal">
   <div class="close">+</div>
-  <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3">
+  <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3" id="open">
+
     <div class="container-login">
       <form class="login100-form validate-form">
         <span class="login100-form-title pb-4">
@@ -55,6 +56,29 @@
           </a>
         </div>
       </form>
+      <%= simple_form_for(@user, url: user_session_path) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      placeholder: "Email",
+                      required: false,
+                      # html property
+                      autofocus: true,
+                      :class => 'email',
+                      label: '&nbsp;'.html_safe,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      placeholder: "Password",
+                      required: false,
+                      :class => 'password',
+                      label: '&nbsp;'.html_safe,
+
+                      input_html: { autocomplete: "current-password" } %>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign in", :class => 'button'%>
+          </div>
+        </div>
+      <% end %>
+
     </div>
     <div class="vl"></div>
     <div class="container-signup">
@@ -64,13 +88,12 @@
         </span>
 
         <div class="container-login100-form-btn" id="create-account">
-          <button class="login100-form-btn">
-            Create
-          </button>
+          <%=link_to "Create", new_user_registration_path, class: "login100-form-btn"%>
         </div>
         <div class="text-center pt-5 pb-2"></div>
         <div class="text-center"></div>
       </form>
     </div>
+
   </div>
 </div>

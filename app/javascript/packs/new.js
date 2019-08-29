@@ -1,4 +1,4 @@
-console.log("hello");
+
 
 // window.location
 document.getElementById('login-btn').addEventListener("click", function() {
@@ -7,6 +7,6 @@ document.getElementById('login-btn').addEventListener("click", function() {
 document.querySelector('.close').addEventListener("click", function() {
     document.querySelector('.bg-modal').style.display = "none";
 });
-document.querySelector('.bg-modal').addEventListener("click", function() {
-    document.querySelector('.bg-modal').style.display = "none";
-});
+// document.querySelector('.bg-modal').addEventListener("click", function() {
+//     document.querySelector('.bg-modal').style.display = "none";
+// });
