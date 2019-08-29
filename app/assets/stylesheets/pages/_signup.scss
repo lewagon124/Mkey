@@ -1,6 +1,5 @@
 .containersignup {
   display:flex;
-  // height: 80vh;
   flex-direction: column;
   align-items: center;
   font-family: $my-font;
@@ -10,10 +9,25 @@
 .sign-up {
   width: 400px;
   background: white;
+  border-radius: 4px;
   padding: 40px;
 }
 
 #title {
   text-align: center;
+}
+
+.form-actions {
+  background: $med;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+.sign-btn {
+  margin: 0px;
+  color: $light;
+  }
 }
 
