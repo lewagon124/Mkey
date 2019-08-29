@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
     t.bigint "user_id"
     t.bigint "recipe_id"
     t.string "content"
-    t.boolean "upvote", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id"
@@ -57,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id"
+    t.boolean "status", default: false
+    t.datetime "paydate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -70,15 +71,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_194800) do
     t.integer "prep_time"
     t.integer "cook_time"
     t.bigint "user_id"
-    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_recipes_on_ingredient_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
     t.bigint "user_id"
+    t.integer "friend_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_relationships_on_user_id"
