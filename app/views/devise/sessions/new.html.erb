@@ -1,0 +1,30 @@
+<h1>Log In</h1>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email,
+                placeholder: "Email",
+                required: false,
+                # html property
+                autofocus: true,
+                :class => 'email',
+                label: '&nbsp;'.html_safe,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                placeholder: "Password",
+                required: false,
+                :class => 'password',
+                label: '&nbsp;'.html_safe,
+
+                input_html: { autocomplete: "current-password" } %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign in", :class => 'button'%>
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+<% end %>
+
+
+
+
+
