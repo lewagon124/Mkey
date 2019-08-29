@@ -1,0 +1,57 @@
+<div class="bg-modal">
+  <div class="close">+</div>
+  <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3" id="open">
+
+    <div class="container-login">
+      <form class="login100-form validate-form" id="new_user" novalidate="novalidate" action="/users/sign_in" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="authenticity_token" value="RAVS010kLOf5w0A8DZ2yI5lC6gO2j3PgWFH35bi8XVUbAxlnbes3+zsBbV8yEZC2tzzaNJuYRab0NbNtFreL1w==" />
+        <span class="login100-form-title pb-4">
+          Sign In
+        </span>
+        <div class="wrap-input100 validate-input mb-2 form-group email optional user_email" data-validate="Enter username or email">
+          <input class="input100 form-control string email optional" autocomplete="email" autofocus="autofocus" type="email" placeholder="username or email" value="" name="user[email]" id="user_email">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input mb-2 form-group password optional user_password" data-validate="Enter password">
+          <input class="input100 form-control password optional" autocomplete="current-password" type="password" name="user[password]" placeholder="password" id="user_password">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="container-login100-form-btn form-actions">
+          <input type="submit" name="commit" value="Sign in" class="btn login100-form-btn" data-disable-with="Sign in" />
+        </div>
+
+        <div class="text-center pt-5 pb-2">
+          <span class="txt1">
+            Or login with
+          </span>
+        </div>
+        <div class="d-flex justify-content-center pb-5">
+          <a href="#" class="login100-social-item">
+            <img src="https://img.icons8.com/plasticine/2x/facebook-new.png" alt="facebook">
+          </a>
+          <a href="#" class="login100-social-item">
+            <img src="https://img.icons8.com/plasticine/2x/google-logo.png" alt="GOOGLE">
+          </a>
+        </div>
+      </form>
+
+    </div>
+    <div class="vl"></div>
+    <div class="container-signup">
+      <form class="login100-form validate-form">
+        <span class="login100-form-title p-b-37">
+          Register
+        </span>
+
+        <div class="container-login100-form-btn" id="create-account">
+          <%=link_to "Create", new_user_registration_path, class: "login100-form-btn"%>
+        </div>
+        <div class="text-center pt-5 pb-2"></div>
+        <div class="text-center"></div>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -295,7 +295,13 @@
   <!--/.Carousel Wrapper-->
 </div>
 
-<!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
+
+
+
+
+
+<!--
+ <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button>
 <div class="bg-modal">
   <div class="close">+</div>
   <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3">
@@ -352,6 +358,12 @@
     </div>
   </div>
 </div>
+ -->
+
+
+
+
+
 
 
 <!--How it work section-->
@@ -396,82 +408,3 @@
 </div>
 
   <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
-<div class="bg-modal">
-  <div class="close">+</div>
-  <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3" id="open">
-
-    <div class="container-login">
-      <form class="login100-form validate-form">
-        <span class="login100-form-title pb-4">
-          Sign In
-        </span>
-        <div class="wrap-input100 validate-input mb-2" data-validate="Enter username or email">
-          <input class="input100" type="text" name="username" placeholder="username or email">
-          <span class="focus-input100"></span>
-        </div>
-        <div class="wrap-input100 validate-input mb-2" data-validate="Enter password">
-          <input class="input100" type="password" name="pass" placeholder="password">
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            Sign In
-          </button>
-        </div>
-
-        <div class="text-center pt-5 pb-2">
-          <span class="txt1">
-            Or login with
-          </span>
-        </div>
-        <div class="d-flex justify-content-center pb-5">
-          <a href="#" class="login100-social-item">
-            <img src="https://img.icons8.com/plasticine/2x/facebook-new.png" alt="facebook">
-          </a>
-          <a href="#" class="login100-social-item">
-            <img src="https://img.icons8.com/plasticine/2x/google-logo.png" alt="GOOGLE">
-          </a>
-        </div>
-      </form>
-      <%= simple_form_for(@user, url: user_session_path) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      placeholder: "Email",
-                      required: false,
-                      # html property
-                      autofocus: true,
-                      :class => 'email',
-                      label: '&nbsp;'.html_safe,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      placeholder: "Password",
-                      required: false,
-                      :class => 'password',
-                      label: '&nbsp;'.html_safe,
-
-                      input_html: { autocomplete: "current-password" } %>
-          <div class="form-actions">
-            <%= f.button :submit, "Sign in", :class => 'button'%>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-    <div class="vl"></div>
-    <div class="container-signup">
-      <form class="login100-form validate-form">
-        <span class="login100-form-title p-b-37">
-          Register
-        </span>
-
-        <div class="container-login100-form-btn" id="create-account">
-          <%=link_to "Create", new_user_registration_path, class: "login100-form-btn"%>
-        </div>
-        <div class="text-center pt-5 pb-2"></div>
-        <div class="text-center"></div>
-      </form>
-    </div>
-
-  </div>
-</div>
