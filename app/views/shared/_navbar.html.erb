@@ -2,7 +2,7 @@
   <%= form_tag(search_path, class: "searchform") do %>
   <form class="form-inline md-form form-sm active-pink active-pink-2 mt-2">
     <i class="fas fa-search" aria-hidden="true"></i>
-    <input class="form-control form-control-sm ml-2 w-75" id="search-bar" type="text" placeholder="Avocado Toast" aria-label="Search">
+    <input class="form-control form-control-sm ml-2 w-75" id="search-bar" type="text" placeholder="Avocado Toast" aria-label="Search" onfocus="this.placeholder=''" onblur="this.placeholder='search me again!'">
   </form>
 <% end %>
 
@@ -31,7 +31,7 @@
         </div>
       </li>
     <% else %>
-      <button class='btn btn-primary btn-lg' id="login-btn">Login/Sign Up</button>
+      <div id="login-btn"> Login/Sign Up </div>
     <% end %>
   </ul>
 </div>

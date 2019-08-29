@@ -7,7 +7,7 @@
   margin-right: 20px;
 }
 
-#search-bar{
+#search-bar {
   display: inline-block;
 }
 
@@ -29,6 +29,12 @@
 }
 
 #login-btn {
-  border-radius: 40px;
-  border: 0px;
+  cursor: pointer;
+  padding: 5px 20px;
+  &:hover {
+    // padding: 5px 20px;
+    background-color: $mokey;
+    color: white;
+    border-radius: 30px;
+  }
 }
