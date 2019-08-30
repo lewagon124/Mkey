@@ -6,7 +6,12 @@ class RecipesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
     @recipe = Recipe.find(params[:id])
+
   end
 
   def search
