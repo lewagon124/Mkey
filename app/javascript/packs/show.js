@@ -1,3 +1,4 @@
+console.log("chen");
 function splitScroll(){
   const controller = new ScrollMagic.Controller();
 
