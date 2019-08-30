@@ -17,7 +17,7 @@ chen = User.create(
 )
 
 chicken = Recipe.new(
-  name: "chen",
+  name: "Chicken Salad",
   video: File.open("./app/assets/images/recipes/recipe_chicken.mp4"),
   image: File.open("./app/assets/images/recipes/recipe_salad.png"),
   desc: "this chicken is amazing!",
