@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :recipes
   post "/search", to: "recipes#search"
-  resources :cart do
-    resources :ingredient
+  resources :carts do
+    resources :ingredients
   end
   resources :orders, only: [:show, :create] do
     resources :payments, only: [:new, :create]

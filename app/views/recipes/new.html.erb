@@ -61,7 +61,13 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="My Teddy"
+          data-email="<%= current_user.email %>"
+          data-description="Teddy <%= @order.teddy_sku %>"
+          data-amount="<%= @order.amount_cents %>"
+          data-currency="<%= @order.amount.currency %>"></script>
       </form>
     </div>
   </div>
