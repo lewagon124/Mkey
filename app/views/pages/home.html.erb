@@ -4,7 +4,10 @@
   <div class="video-container">
     <div class="video-overlay"></div>
     <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
-      <source src="assets/hash.mp4" type="video/mp4">
+      <source src="<%= cl_image_tag("hash_bsllca",
+      width: 400, height: 300, crop: :fill) %>" type="video/mp4">
+<!--     <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
+      <source src="assets/hash.mp4" type="video/mp4"> -->
     </video>
   </div>
 </div>
