@@ -4,18 +4,12 @@ class CartsController < ApplicationController
   end
 
   def new
-    @cartitem = Cartitem.new
-  end
-
-  def create
-    @cartitem = Cartitem.new(cart_params)
+    @cartitem= current_user.current_cart
+    @total=0
   end
 
   def show
-    @items = Item.all
-    @cartitem=Cartitem.find(params[:id])
-    @quantity=cartitem.quantity
-    @total=0
+
   end
   def update
     @order = Order.new
