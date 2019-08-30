@@ -1,63 +1,126 @@
-
-
 .about {
   height: 300vh;
-  // display: flex;
+  display: flex;
 }
 
 .about-title {
-  // width: 50%;
-  // height: 100vh;
-  display: flex;
+  width: 70%;
+  height: 100vh;
+  // display: flex;
   // justify-content: center;
   // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   font-size: 20px;
-  margin: 0 !important;
-
-  img {
-    width: 50%;
+  overflow: hidden;
+  // margin: 0 !important;
+  video {
+    width: 200%;
   }
-
 }
 
 .about-pages {
   width: 50%;
 
+  .recipe-page-title {
+    padding: 40px 20px;
+  }
+
+  .ingredient-name-container{
+    padding: 40px;
+  }
+
+  .ingredient-container {
+    display:block;
+    padding: 40px;
+    .ingredient-image {
+      height: 80px;
+      width: 80px;
+      // border-radius: 50%;
+      // border: 5px solid;
+    }
+  }
+
+hr {
+  border-top: 3px solid;
+  background: white;
+}
+
   div {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    color: white;
+    // align-items: center;
+    color: darkslategray;
 
-  p {
-    width: 80%;
-    font-size: 18px;
-    line-height: 30px;
-    color: red;
-}
-}
+    p {
+      width: 80%;
+      font-size: 18px;
+      line-height: 30px;
+      color: white;
+
+      .ingredient {
+        font-size: 30px;
+      }
+    }
+  }
 }
 
 .text1 {
-  background: #584848;
+  background: white;
+
+  .cart-btn {
+    cursor: pointer;
+    padding: 5px;
+    // &:hover {
+    //   // padding: 5px 20px;
+    //   background-color: $med;
+    //   color: $light;
+    //   border-radius: 4px;
+    // }
+  }
 }
 
 .text2 {
-  background: #393b45;
+  background: white;
 }
 
 .text3 {
   background: #F3B54A;
 }
 
+.video {
+  width: 100%;
+  height: auto;
+}
 
-
+#recipes-btn {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ // float: right;
+ a {
+   padding: 5px 20px;
+   border-radius: 4px;
+   font-family: $my-font;
+   font-weight: bolder;
+   color:white;
+   font-size: 30px;
+   background-color:  $mokey;
+   &:hover {
+     padding: 5px 20px;
+     background: $med;
+     color: $light;
+     border-radius: 4px;
+   }
+ }
+}
 // .container-recipe {
 //   height: 300vh;
 //   display: flex;
-
 //   .imagetitle {
 //     width: 50%;
 //     height: 100vh;
@@ -68,10 +131,8 @@
 //     margin: 0 !important;
 //   }
 // }
-
 // .recipe-pages {
 //   width: 50%;
-
 //   div {
 //     height: 100vh;
 //     display: flex;
@@ -79,7 +140,6 @@
 //     justify-content: space-around;
 //     align-items: center;
 //     color: white;
-
 //   p {
 //     width: 80%;
 //     font-size: 18px;

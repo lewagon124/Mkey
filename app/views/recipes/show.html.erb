@@ -1,27 +1,63 @@
+
+
+
+<% @sum=0 %>
 <section class="about">
 
   <div class="about-title">
-    <h1><%= @recipe.name %></h1>
-    <img src="<%= @recipe.image %>" alt="">
+
+    <video autoplay="autoplay" muted="muted" loop="loop" id="video">
+      <source src="<%= @recipe.video %>" type="video/mp4">
+    </video>
+    <!-- <img src=" <%= @recipe.image %> " alt=""> -->
   </div>
 
   <div class="about-pages">
+    <h1 class="recipe-name recipe-page-title"><%= @recipe.name %></h1>
     <div class="text1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex distinctio explicabo ipsa.</p>
+      <h4 class="ingredient recipe-page-title">Ingredients</h4>
+      <div class="ingredient-container">
+        <% @recipe.ingredients.each do |ingredient| %>
+          <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
+          <!-- <p>ingredient.item.name </p> -->
+          <% @sum=ingredient.item.amount_cents %>
+        <% end %>
+      </div>
+      <div class="ingredient-name-container">
+        <ol>
+          <% @recipe.ingredients.each do |ingredient| %>
+            <li> 1-Tsp <%= ingredient.item.name%> </li>
+          <% end %>
+        </ol>
+      </div>
+
+        <h4 class="recipe-page-title">
+          Pre-time: <%=@recipe.prep_time%> mins
+        </h4>
+        <h3 class="price recipe-page-title">
+          $<%= @sum/10%> <small> ($4/serving)</small>
+        </h3>
+        <div> <p id="recipes-btn"><%=link_to "Add to cart", recipes_path%></p></div>
     </div>
 
+    <hr>
     <div class="text2">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex distinctio explicabo ipsa.</p>
+      <h4 class="ingredient recipe-page-title">Preparation</h4>
+      <ol>
+        <% @recipe.steps.each do |step| %>
+          <li><%= step.number%>  <%= step.content%> </li>
+        <% end %>
+      </ol>
     </div>
 
-    <div class="text3">
+    <!-- <div class="text3">
+      <h2>Preparations</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex distinctio explicabo ipsa.</p>
     </div>
-  <div>
-  <%=link_to "Checkout", new_cart_path%>
-</section>
-
+    <div> -->
+    </section>
 <% link_to "checkout", item_cartitems(@items) %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
 
-<!-- <script src="./show.js"></script> -->
+    <%= javascript_pack_tag("show") %>
+
