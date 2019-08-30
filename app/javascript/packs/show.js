@@ -3,10 +3,10 @@ function splitScroll(){
 
   new ScrollMagic.Scene({
     duration: '200%',
-    triggerElement: '.imagetitle',
+    triggerElement: '.about-title',
     triggerHook: 0
   })
-  .setPin('.imagetitle')
+  .setPin('.about-title')
   .addIndicators()
   .addTo(controller);
 }

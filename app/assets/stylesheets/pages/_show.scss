@@ -2,17 +2,22 @@
 
 .about {
   height: 300vh;
-  // display: flex;
+  display: flex;
 }
 
 .about-title {
-  // width: 50%;
-  // height: 100vh;
-  display: flex;
+  width: 70%;
+  height: 100vh;
+  // display: flex;
   // justify-content: center;
   // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   font-size: 20px;
-  margin: 0 !important;
+  overflow: hidden;
+  // margin: 0 !important;
 
   img {
     width: 50%;
@@ -35,21 +40,41 @@
     width: 80%;
     font-size: 18px;
     line-height: 30px;
-    color: red;
+    color: white;
+
+    .ingredient {
+    font-size: 30px;
+    }
 }
 }
 }
 
 .text1 {
-  background: #584848;
+  background: $light;
+
+  .cart-btn {
+    cursor: pointer;
+    padding: 5px 5px;
+    // &:hover {
+    //   // padding: 5px 20px;
+    //   background-color: $med;
+    //   color: $light;
+    //   border-radius: 4px;
+    // }
+  }
 }
 
 .text2 {
-  background: #393b45;
+  background: $med;
 }
 
 .text3 {
   background: #F3B54A;
+}
+
+.video {
+  width: 100%;
+  height: auto;
 }
 
 
