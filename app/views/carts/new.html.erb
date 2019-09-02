@@ -9,7 +9,6 @@
         <li>Quantity</li>
         <li>Sub Total</li>5
       </div>
-
       <div class="row">
         <li><img src="<%= @cartitem.item.image%>" alt=""></li>
         <li><%=@cartitem.item.name %></li>
@@ -18,6 +17,8 @@
         <button>REMOVE</button>
       </div>
       <% @total+=item.amount %>
+
+  </div>
 
   </div>
 </ul>
