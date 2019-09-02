@@ -1,8 +1,8 @@
-<h1>Purchase of teddy <%= @order %></h1>
-<%= form_tag order_payments_path(@order) do %>
+<h1>Purchase of teddy <%= @cart %></h1>
+<%= form_tag cart_payments_path(@cart) do %>
   <article>
     <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+      <span>Amount: <%= humanized_money_with_symbol(@cart.price) %></span>
     </label>
   </article>
 
@@ -10,8 +10,7 @@
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="My Teddy"
     data-email="<%= current_user.email %>"
-    data-description="Teddy <%= @order.teddy_sku %>"
-    data-amount="<%= @order.amount_cents %>"
-    data-currency="<%= @order.amount.currency %>"></script>
+    data-amount="<%= @cart.price_cents %>"
+    data-currency="<%= @cart.price.currency %>"></script>
 
 <% end %>
