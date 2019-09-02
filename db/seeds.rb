@@ -141,11 +141,166 @@ Ingredient.create!({ item_id: spray.id, recipe: chocobread})
 
 
 #recipe #4
+pasta = Recipe.new(
+  name: "2-Ingredient low carb pasta",
+  video: File.open("./app/assets/images/recipes/mozzarella.mp4"),
+  image: File.open("./app/assets/images/recipes/mozzarella.png"),
+  desc: "Simply delish!",
+  prep_time: 8,
+  cook_time: 0,
+)
+
+pasta.user = chen
+  pasta.save!
 
 # directions
-# chocobread_steps = Step.create!([
-#   {number: 1, content: " ", recipe_id: chocobread.id},
-#   {number: 2, content: " ", recipe_id: chocobread.id},
-#   {number: 3, content: " ", recipe_id: chocobread.id},
-#   {number: 4, content: "Enjoy ", recipe_id: chocobread.id
+pasta_steps = Step.create!([
+  {number: 1, content: "Add the mozzarella to a bowl and microwave for 1-2 minutes, until melted. ", recipe_id: pasta.id},
+  {number: 2, content: "Allow the mozzarella to cool for 30 seconds. ", recipe_id: pasta.id},
+  {number: 3, content: "With a spatula, gently fold the egg yolk into the cheese. ", recipe_id: pasta.id},
+  {number: 4, content: "Turn the mixture out onto a parchment paper-lined baking sheet. ", recipe_id: pasta.id},
+  {number: 5, content: "Place another piece of parchment paper on top of the dough and press down with your hand until thin. ", recipe_id: pasta.id},
+  {number: 6, content: "Remove the top piece of parchment and cut the dough into thin strips. ", recipe_id: pasta.id},
+  {number: 7, content: "Place the “pasta” on a rack and refrigerate for four hours or overnight. ", recipe_id: pasta.id},
+  {number: 8, content: "Place the “pasta” in boiling water for one minute. ", recipe_id: pasta.id},
+  {number: 9, content: "Drain into a colander and run cool water over the pasta to prevent sticking. ", recipe_id: pasta.id},
+  {number: 10, content: "Serve with your favorite sauce. ", recipe_id: pasta.id},
+  {number: 11, content: "Enjoy ", recipe_id: pasta.id}
+  ])
+
+egg = Item.create!({name: 'Eggs', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: egg.id, recipe: pasta})
+
+mozzarella = Item.create!({name: 'Shredded Mozzarella Cheese', amount_cents: '1249', image: File.open('./app/assets/images/ingredients/mozzarella.png'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: mozzarella.id, recipe: pasta})
+
+
+# recipe #5
+salad = Recipe.new(
+  name: "Cucumber, Tomato, and Avocado Salad",
+  video: File.open("./app/assets/images/recipes/salad.mp4"),
+  image: File.open("./app/assets/images/recipes/salad.png"),
+  desc: "Simple and healthy!",
+  prep_time: 12,
+  cook_time: 0,
+)
+
+salad.user = chen
+  salad.save!
+
+# directions
+salad_steps = Step.create!([
+  {number: 1, content: "Place sliced cucumber, tomatoes, avocados, onion and cilantro in a large salad bowl. ", recipe_id: salad.id},
+  {number: 2, content: "Toss with olive oil, lemon juice, salt and pepper ", recipe_id: salad.id},
+  {number: 4, content: "Enjoy ", recipe_id: salad.id}
+  ])
+
+cucumber = Item.create!({name: 'Cucumber', amount_cents: '129', image: File.open('./app/assets/images/ingredients/cucumber.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: cucumber.id, recipe: salad})
+
+tomatoes = Item.create!({name: 'Tomatoes', amount_cents: '429', image: File.open('./app/assets/images/ingredients/tomatoes.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: tomatoes.id, recipe: salad})
+
+avocadoes = Item.create!({name: 'Avocadoes', amount_cents: '399', image: File.open('./app/assets/images/ingredients/avocado.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: avocadoes.id, recipe: salad})
+
+red_onion = Item.create!({name: 'Red Onion', amount_cents: '79', image: File.open('./app/assets/images/ingredients/red_onion.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: red_onion.id, recipe: salad})
+
+parsley = Item.create!({name: 'Cilantro', amount_cents: '179', image: File.open('./app/assets/images/ingredients/parsley.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: parsley.id, recipe: salad})
+
+olive = Item.create!({name: 'Olive Oil ', amount_cents: '829', image: File.open('./app/assets/images/ingredients/olive_oil.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: olive.id, recipe: salad})
+
+salt_pepper = Item.create!({name: 'Salt & Pepper', amount_cents: '99', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: salt.id, recipe: salad})
+
+
+# recipe 6
+salmon = Recipe.new(
+  name: "Maple-Glazed Salmon",
+  video: File.open("./app/assets/images/recipes/salmon.mp4"),
+  image: File.open("./app/assets/images/recipes/salmon.png"),
+  desc: "Simple and healthy!",
+  prep_time: 12,
+  cook_time: 0,
+)
+
+salmon.user = chen
+  salmon.save!
+
+syrup = Item.create!({name: 'Maply Syrup', amount_cents: '899', image: File.open('./app/assets/images/ingredients/syrup.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: syrup.id, recipe: salmon})
+
+orange = Item.create!({name: 'Orange Juice', amount_cents: '399', image: File.open('./app/assets/images/ingredients/orange_juice.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: orange.id, recipe: salmon})
+
+soy = Item.create!({name: 'Soy Sauce', amount_cents: '399', image: File.open('./app/assets/images/ingredients/soy.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: soy.id, recipe: salmon})
+
+salmon_fillet = Item.create!({name: 'Salmon', amount_cents: '1199', image: File.open('./app/assets/images/ingredients/salmon.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: salmon_fillet.id, recipe: salmon})
+
+garlic = Item.create!({name: 'Garlic', amount_cents: '99', image: File.open('./app/assets/images/ingredients/garlic.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: garlic.id, recipe: salmon})
+
+lemon = Item.create!({name: 'Lemon', amount_cents: '99', image: File.open('./app/assets/images/ingredients/lemon.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: lemon.id, recipe: salmon})
+
+butter = Item.create!({name: 'Salted Butter', amount_cents: '399', image: File.open('./app/assets/images/ingredients/butter.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: butter.id, recipe: salmon})
+
+brocoli = Item.create!({name: 'Brocoli', amount_cents: '199', image: File.open('./app/assets/images/ingredients/brocoli.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: brocoli.id, recipe: salmon})
+
+olive = Item.create!({name: 'Olive Oil ', amount_cents: '829', image: File.open('./app/assets/images/ingredients/olive_oil.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: olive.id, recipe: salmon})
+
+salt_pepper = Item.create!({name: 'Salt & Pepper', amount_cents: '99', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: salt.id, recipe: salmon})
+
+# directions
+salmon_steps = Step.create!([
+  {number: 1, content: "For the salmon, heat vegetable oil on medium-high in a cast-iron skillet.
+For the broccoli, fill a medium pot halfway with water. Add a dash of salt and start boiling water. ", recipe_id: salmon.id},
+  {number: 2, content: "In the meantime, whisk together maple syrup, orange juice, soy sauce, garlic, salt, and pepper in a medium bowl. Set aside 2 tablespoons for topping later. ", recipe_id: salmon.id},
+  {number: 3, content: "Place salmon fillets inside the bowl and make sure each side is covered with sauce. ", recipe_id: salmon.id},
+  {number: 4, content: "Sear the salmon 2-3 minutes on each side. Brush the tops with the sauce set aside. ", recipe_id: salmon.id},
+  {number: 5, content: "With the pot of water boiling, add the broccoli and cover lid. Blanch for 2 minutes then drain under cold water to stop the cooking. ", recipe_id: salmon.id},
+  {number: 6, content: "In the drained pot of broccoli, stir in butter, soy sauce, some lemon zest, and red pepper flakes on low heat. Mix until broccoli is well-coated. ", recipe_id: salmon.id},
+  {number: 7, content: "On each plate, serve a filet of salmon and scoop of broccoli. ", recipe_id: salmon.id},
+  {number: 8, content: "Enjoy ", recipe_id: salmon.id}
+  ])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# directions
+# pasta_steps = Step.create!([
+#   {number: 1, content: " ", recipe_id: pasta.id},
+#   {number: 2, content: " ", recipe_id: pasta.id},
+#   {number: 3, content: " ", recipe_id: pasta.id},
+#   {number: 4, content: "Enjoy ", recipe_id: pasta.id}
 #   ])
+
+
+
+
+
+
+
+
+
+
