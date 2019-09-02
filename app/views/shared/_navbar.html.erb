@@ -15,9 +15,18 @@
   <%= image_tag "mokey.png" %> -->
 </div>
 
+
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     <% if user_signed_in? %>
+    <div>
+
+        <li class="nav-item item">
+          <%= link_to "#", class: "nav-link" do%>
+            <i class="fa fa-shopping-cart"></i>
+          <% end %>
+        </li>
+    </div>
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
@@ -32,7 +41,17 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>
+
+
     <% else %>
+    <div>
+
+        <li class="nav-item item">
+          <%= link_to "#", class: "nav-link" do%>
+            <i class="fa fa-shopping-cart"></i>
+          <% end %>
+        </li>
+    </div>
       <div id="login-btn"> Login/Sign Up </div>
     <% end %>
   </ul>
