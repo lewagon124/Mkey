@@ -36,7 +36,7 @@ chicken_steps = Step.create!([
   {number: 5, content: "Toss gently and serve! Enjoy!", recipe_id: chicken.id}
   ])
 
-caesar = Item.create!({name: 'Caesar Salad Dressing ', amount_cents: '8.99', image: File.open('./app/assets/images/ingredients/ceasar.jpg'), condiment: 'FALSE'})
+caesar = Item.create!({name: 'Caesar Salad Dressing ', amount_cents: '899', image: File.open('./app/assets/images/ingredients/ceasar.jpg'), condiment: 'FALSE'})
 Ingredient.create!({ item: caesar, recipe: chicken })
 
 parmesan = Item.create!({name: 'Parmesan ', amount_cents: '899', image: File.open('./app/assets/images/ingredients/parmesan.jpg'), condiment: 'FALSE'})
