@@ -1,8 +1,8 @@
+
 <h3>Shopping Cart</h3>
 
 <ul>
   <div class="item">
-    <%@items.each do |item| %>
 
       <div class="row">
         <li>Product Name</li>
@@ -11,25 +11,22 @@
       </div>
 
       <div class="row">
-        <li><%=item.image %></li>
-        <li><%=item.name %></li>
-        <li><%=item.quantity %></li>
-        <li><%=item.amount%></li>
-        <button>REMOVE</button>
+        <%@cartitems.each do |cartitem|%>
+        <li><%=image_tag cartitem.item.image_url, width: "100" %>
+        <li><%=cartitem.item.name %></li>
+        <li><%=cartitem.quantity %></li>
+        <li><%= cartitem.item.amount * cartitem.quantity %></li>
+
+        <% end %>
+
       </div>
-      <% @total+=item.amount %>
-    <% end %>
+
+
   </div>
 </ul>
 
-
-<div class="cartsummary">
-  <ul>
-    <li>subtotal <% @total %></li>
-    <li>shipping: $2.99 <% @total+=2.99 %></li>
-    <li>taxes <% @total+=@total*0.05 %></li>
-    <li>total <% @total %></li>
-  </ul>
-  <% link_to "Checkout",  new_cart_path%>
+<div>
+  <%=@cart.price %>
 </div>
 
+<%=link_to "Payment", new_cart_payment_path(@cart) %>

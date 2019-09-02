@@ -1,0 +1,36 @@
+
+<h3>Shopping Cart</h3>
+
+<ul>
+  <div class="item">
+
+      <div class="row">
+        <li>Product Name</li>
+        <li>Quantity</li>
+        <li>Sub Total</li>5
+      </div>
+      <div class="row">
+        <li><img src="<%= @cartitem.item.image%>" alt=""></li>
+        <li><%=@cartitem.item.name %></li>
+        <li><%=@cartitem.quantity %></li>
+        <li><%=@cartitem.item.amount%></li>
+        <button>REMOVE</button>
+      </div>
+      <% @total+=item.amount %>
+
+  </div>
+
+  </div>
+</ul>
+
+
+<div class="cartsummary">
+  <ul>
+    <li>subtotal <% @total %></li>
+    <li>shipping: $2.99 <% @total+=2.99 %></li>
+    <li>taxes <% @total+=@total*0.05 %></li>
+    <li>total <% @total %></li>
+  </ul>
+  <% link_to "Checkout",  new_cart_path%>
+</div>
+
