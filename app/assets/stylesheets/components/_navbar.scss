@@ -2,22 +2,37 @@
   justify-content: space-between;
   background: white;
   font-family: 'Raleway', sans-serif;
-  border-bottom: 1px solid $med;
-  margin-left: 20px;
-  margin-right: 20px;
+  // border-bottom: 1px solid $med;
+  padding-left: 30px;
+  padding-right: 30px;
+  top: 0;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background: transparent;
 }
 
-#search-bar {
-  display: inline-block;
+.searchform {
+  #search-bar {
+    display: inline-block;
+  }
+
+  .fa-search {
+    color: white;
+  }
 }
 
 .navbar-lewagon .nav-link {
   color: #434343;
 }
 
-.navbar-lewagon .nav-logo {
+.navbar-lewagon {
   color: #FF5E68;
   font-weight: bold;
+}
+
+.nav-logo{
+  height: 45px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -31,6 +46,8 @@
 #login-btn {
   cursor: pointer;
   padding: 5px 20px;
+  color: white;
+
   &:hover {
     // padding: 5px 20px;
     background-color: $med;
