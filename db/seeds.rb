@@ -74,15 +74,15 @@ hashbrown.user = chen
 
 # directions
 hashbrown_steps = Step.create!([
-  {number: 1, content: "Shred the potatoes, then wring out excess water. Mix potatoes with cheddar, French’s Crispy Fried Onions, salt, and Club House Black Pepper Pure Ground. Fold in whisked eggs. ", recipe_id: hasbrown.id},
-  {number: 2, content: "reheat waffle iron on high. Spray iron with cooking spray. Evenly spread half of the potato batter in the waffle iron and close. Cook for 5–7 minutes until nicely browned. ", recipe_id: hasbrown.id},
-  {number: 3, content: "Using a fork, remove hash-brown waffle from iron. Cook the second waffle using the rest of the potato batter. ", recipe_id: hasbrown.id},
-  {number: 4, content: "Enjoy ", recipe_id: hasbrown.id
+  {number: 1, content: "Shred the potatoes, then wring out excess water. Mix potatoes with cheddar, French’s Crispy Fried Onions, salt, and Club House Black Pepper Pure Ground. Fold in whisked eggs. ", recipe_id: hashbrown.id},
+  {number: 2, content: "reheat waffle iron on high. Spray iron with cooking spray. Evenly spread half of the potato batter in the waffle iron and close. Cook for 5–7 minutes until nicely browned. ", recipe_id: hashbrown.id},
+  {number: 3, content: "Using a fork, remove hash-brown waffle from iron. Cook the second waffle using the rest of the potato batter. ", recipe_id: hashbrown.id},
+  {number: 4, content: "Enjoy ", recipe_id: hashbrown.id}
   ])
 
 # ingredients
 potato = Item.create!({name: 'Potato', amount_cents: '499', image: File.open('./app/assets/images/ingredients/potatoes.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: potato_id, recipe: hashbrown })
+Ingredient.create!({ item_id: potato.id, recipe: hashbrown })
 
 cheddar = Item.create!({name: 'Cheddar Cheese ', amount_cents: '699', image: File.open('./app/assets/images/ingredients/cheddar.jpg'), condiment: 'FALSE'})
 Ingredient.create!({ item_id: cheddar.id, recipe: hashbrown})
@@ -104,7 +104,7 @@ Ingredient.create!({ item_id: salt.id, recipe: hashbrown})
 chocobread = Recipe.new(
   name: "Chocolate Infinity Braid",
   video: File.open("./app/assets/images/recipes/chocobread.mp4"),
-  image: File.open("./app/assets/images/recipeschocobread.png"),
+  image: File.open("./app/assets/images/recipes/chocobread.png"),
   desc: "Simply delish!",
   prep_time: 8,
   cook_time: 0,
@@ -123,20 +123,20 @@ Cut the pastry sheets into 9 squares. ", recipe_id: chocobread.id},
   {number: 5, content: "Gently pull the corner all the way through to form a braid. Repeat with the rest of the squares. ", recipe_id: chocobread.id},
   {number: 6, content: "Transfer the braids to the prepared baking sheet and brush with egg wash. ", recipe_id: chocobread.id},
   {number: 7, content: "Bake for 14 minutes, or until golden brown. ", recipe_id: chocobread.id},
-  {number: 8, content: "Enjoy ", recipe_id: chocobread.id
+  {number: 8, content: "Enjoy ", recipe_id: chocobread.id}
   ])
 
 # ingredients
-puff = Item.create!({name: 'Puff Pastry', amount_cents: '399', image: File.open('./app/assets/images/ingredients/puff.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: puff_id, recipe: chocobread })
+puff = Item.create!({name: 'Puff Pastry', amount_cents: '399', image: File.open('./app/assets/images/ingredients/puff.png'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: puff.id, recipe: chocobread })
 
 egg = Item.create!({name: 'Eggs', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})
 Ingredient.create!({ item_id: egg.id, recipe: chocobread})
 
-hazelnut = Item.create!({name: 'Hazelnut spread', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})
+hazelnut = Item.create!({name: 'Hazelnut spread', amount_cents: '329', image: File.open('./app/assets/images/ingredients/hazelnut.png'), condiment: 'FALSE'})
 Ingredient.create!({ item_id: hazelnut.id, recipe: chocobread})
 
-spray = Item.create!({name: 'Nonstick Spray', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'TRUE'})
+spray = Item.create!({name: 'Nonstick Spray', amount_cents: '329', image: File.open('./app/assets/images/ingredients/spray.png'), condiment: 'TRUE'})
 Ingredient.create!({ item_id: spray.id, recipe: chocobread})
 
 
