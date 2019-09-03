@@ -12,11 +12,16 @@
 .banner h1{
 
   text-align: center;
-  font-size: 6rem;
+  font-size: 9rem;
   color: white;
   // background-color: black;
-  opacity: 0.5;
+  // opacity: 0.5;
   z-index: 1;
+
+  p{
+  font-size: 50px;
+  color: white;
+  }
 }
 
 #recipes-btn {
@@ -56,7 +61,7 @@
   width: 100%;
   height: 100vh;
   opacity: 0.5;
-  background-color: $light;
+  background: radial-gradient(circle, rgba(0, 0, 0, 1), rgba(100, 100, 100, 0.1) );
   z-index: 1;
 }
 

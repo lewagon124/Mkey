@@ -2,7 +2,9 @@
   <%= form_tag(search_path, class: "searchform") do %>
   <form class="form-inline md-form form-sm active-pink active-pink-2 mt-2">
     <i class="fas fa-search" aria-hidden="true"></i>
-    <input class="form-control form-control-sm ml-2 w-75" id="search-bar" type="text" placeholder="🥑Avocado Toast" aria-label="Search" onfocus="this.placeholder=''" onblur="this.placeholder='search me again!'">
+
+    <input class="form-control form-control-sm w-75" id="search-bar" type="text" placeholder="🥑Avocado Toast" aria-label="Search" onfocus="this.placeholder=''" onblur="this.placeholder='search me again!'">
+
   </form>
 <% end %>
 
@@ -10,9 +12,7 @@
   <span class="navbar-toggler-icon"></span>
 </button>
 <div>
-<%= link_to "Mokey", root_path, class: "nav-logo" %>
-<!--   <%= link_to root_path, class: "nav-logo" %>
-  <%= image_tag "mokey.png" %> -->
+  <%= link_to image_tag("logo/mokeylogo.png"), root_path, class: "nav-logo" %>
 </div>
 
 
@@ -36,7 +36,7 @@
         <%= link_to "Messages", "#", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= image_tag "https://<k></k>itt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Action", "#", class: "dropdown-item" %>
           <%= link_to "Another action", "#", class: "dropdown-item" %>
