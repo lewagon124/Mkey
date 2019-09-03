@@ -11,6 +11,7 @@ body {
   align-items: center;
   font-size: 16px;
   color: $light;
+  padding: 12px 0px;
 }
 
 .menu-title {
@@ -48,6 +49,10 @@ body {
 .card-item > * {
   text-align: center;
   flex: 0 0 20%;
+
+  .remove-button {
+    font-family: $my-font;
+  }
 }
 
 .checkout {
@@ -56,18 +61,53 @@ body {
   color: white;
   background-color: $mokey;
   border-radius: 4px;
-  font-size: 24px;
+  font-size: 16px;
   font-family: $my-font;
 }
 
 .cart-cost {
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     font-family: $my-font;
   }
 }
 
 .cost {
   display: flex;
+  justify-content: space-between;
+  padding: 0px 18px;
+}
+
+.itemcart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  .item {
+    border: 1px solid $light;
+    width: 900px;
+    border-radius: 4px;
+  }
+}
+
+
+.cart-cost {
+  border: 1px solid $light;
+  width: 300px;
+  border-radius: 4px;
+  height: 235px;
+
+  h4 {
+    text-align: center;
+    padding: 18px 0px;
+  }
+}
+
+.check {
+  margin-top: 30px;
+  text-align: center;
+  font-family: $my-font;
+  // display: flex;
+  // align-items: center;
 }
