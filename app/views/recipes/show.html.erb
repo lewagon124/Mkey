@@ -4,7 +4,7 @@
     <div class="about-title">
 
       <video autoplay="autoplay" muted="muted" loop="loop" id="video">
-        <source src="<%= @recipe.video %>" type="video/mp4">
+        <source src="<%= @recipe.video %>" type="video/mp4" id="recipe-video">
       </video>
       <!-- <img src=" <%= @recipe.image %> " alt=""> -->
     </div>
@@ -14,10 +14,20 @@
       <div class="text1">
         <h4 class="ingredient recipe-page-title">Ingredients</h4>
         <div class="ingredient-container">
-          <% @recipe.ingredients.each do |ingredient| %>
-            <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
-            <!-- <p>ingredient.item.name </p> -->
-            <% @sum=ingredient.item.amount_cents %><% end %>
+
+          <%= form_tag multi_create_path do %>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <!-- <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center"> -->
+              <label class="image-checkbox">
+                <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
+                <% @sum=ingredient.item.amount_cents %>
+                  <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>"/>
+                </label>
+                <!-- </div> -->
+              <% end %>
+              <%= submit_tag "Add Those Things", class: "btn btn-succes btn-lg btn-block" %>
+            <% end %>
+
           </div>
           <div class="ingredient-name-container">
             <ol>
@@ -26,9 +36,6 @@
                   1-Tsp
                   <%= ingredient.item.name%>
                 </li>
-                <% if  user_signed_in?%>
-                  <%=button_to "Add to Cart", item_cartitems_path(ingredient.item), :class=>"btn btn-succes btn-lg btn-block"%>
-                <% end %>
               <% end %>
             </ol>
           </div>
