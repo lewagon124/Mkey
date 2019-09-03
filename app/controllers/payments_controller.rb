@@ -12,11 +12,12 @@ class PaymentsController < ApplicationController
 
   charge = Stripe::Charge.create(
     customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @cart.amount_cents,
-    currency:     @cart.amount.currency
+    amount:       @cart.price_cents,
+    currency:     @cart.price.currency
   )
 
-  @cart.update(payment: charge.to_json, state: 'paid')
+  @cart.update(status: true)
+  current_user.empty_cart
   redirect_to cart_path(@cart)
 
   rescue Stripe::CardError => e

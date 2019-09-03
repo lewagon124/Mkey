@@ -16,7 +16,7 @@
         <li><%=cartitem.item.name %></li>
         <li><%=cartitem.quantity %></li>
         <li><%= cartitem.item.amount * cartitem.quantity %></li>
-
+        <%=link_to "Remove from Cart", cartitem_path(cartitem.id), :class=>"btn btn-success btn-lg btn-block", method: :delete %>
         <% end %>
 
       </div>
