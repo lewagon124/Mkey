@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 2064137986e1afce509f38ad440c9b66954dc02f
 window.addEventListener("scroll", function() {
   let offset = window.pageYOffset;
 
