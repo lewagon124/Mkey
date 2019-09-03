@@ -13,11 +13,11 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(params[:id])
-    @cartitem = @cart.cartitem
-    @cartiem.destroy
+    @item = current_user.current_cart.items.find(params[:id])
+    pyebug
+    @item.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Cart item was successfully removed.' }
+      format.html { redirect_to cart_path(current_user.current_cart), notice: 'Cart item was successfully removed.' }
       format.json { head :no_content }
     end
   end
