@@ -17,12 +17,18 @@ class PaymentsController < ApplicationController
   )
 
   @cart.update(status: true)
-  current_user.empty_cart
-  redirect_to cart_path(@cart)
+
+  redirect_to cart_payments_path
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_cart_payment_path(@cart)
+  end
+
+  def index
+    @user=current_user
+    @cart=current_cart
+    current_user.empty_cart
   end
 
 private

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :carts do
-    resources :payments, only: [:new, :create]
+    resources :payments, only: [:new, :create, :index]
   end
   resources :recipes
   post "/search", to: "recipes#search"
