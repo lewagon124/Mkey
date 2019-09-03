@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def current_cart
     Cart.find_by(user: self, status: false)
   end
+  before_create :set_default_avatar
+  def set_default_avatar
+    self.image = ("<i class='fas fa-user-circle'></i>").html_safe
+  end
 end
