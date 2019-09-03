@@ -10,6 +10,7 @@
           <li class="menu-title">Product Name</li>
           <li class="menu-title">Quantity</li>
           <li class="menu-title">Sub Total</li>
+          <li class="menu-title">Remove</li>
         </div>
 
         <div class="row-items">
@@ -19,8 +20,10 @@
               <li><%=cartitem.item.name %></li>
               <li><%=cartitem.quantity %></li>
               <li><%= cartitem.item.amount * cartitem.quantity %></li>
-
               <% @sum = @sum + cartitem.item.amount * cartitem.quantity%>
+
+              <%=link_to "Delete", cartitem_path(cartitem.id), :class=>"remove-button", method: :delete %>
+
             </div>
           <% end %>
         </div>
@@ -42,8 +45,10 @@
       <p>Total</p>
       <p>$<%=@sum*1.15 %></p>
     </div>
+    <div>
+      <%=link_to "Checkout", new_cart_payment_path(@cart), class: "checkout" %>
+    </div>
 
-    <%=link_to "Checkout", new_cart_payment_path(@cart), class: "checkout" %>
   </div>
 
 </div>
