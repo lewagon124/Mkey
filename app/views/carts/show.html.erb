@@ -1,32 +1,56 @@
+ <% @sum = 0 %>
+<div class="container-cart">
 
-<h3>Shopping Cart</h3>
+  <h3 class="shopping">Shopping Cart</h3>
+    <div class="itemcart">
+        <div class="item">
+            <div class="menu">
 
-<ul>
-  <div class="item">
+              <li class="menu-title">Product Image</li>
+              <li class="menu-title">Product Name</li>
+              <li class="menu-title">Quantity</li>
+              <li class="menu-title">Sub Total</li>
+              <li class="menu-title">Remove</li>
+            </div>
 
-      <div class="row">
-        <li>Product Name</li>
-        <li>Quantity</li>
-        <li>Sub Total</li>
+            <div class="row-items">
+              <%@cartitems.each do |cartitem|%>
+                <div class="card-item">
+                  <div><%=image_tag cartitem.item.image_url, width: "100" %></div>
+                  <li><%=cartitem.item.name %></li>
+                  <li><%=cartitem.quantity %></li>
+                  <li><%= cartitem.item.amount * cartitem.quantity %></li>
+                  <% @sum = @sum + cartitem.item.amount * cartitem.quantity%>
+                  <%=link_to "Delete", cartitem_path(cartitem.id), :class=>"remove-button", method: :delete %>
+                </div>
+              <% end %>
+            </div>
+
+        </div>
+      <div class="cart-cost">
+        <h4>Cart Summary</h4>
+        <div class="cost-menu">
+          <div class="cost">
+            <p>Subtotal</p>
+            <p>$<%=@sum%></p>
+          </div>
+
+          </div>
+          <div class="cost">
+            <p>Taxes</p>
+            <p>$<%=@sum * 0.15 %></p>
+          </div>
+          <div class="cost">
+            <p>Total</p>
+            <p>$<%=@sum*1.15 %></p>
+          </div>
+
+          <div class="check">
+            <%=link_to "Checkout", new_cart_payment_path(@cart), class: "checkout" %>
+          </div>
+        </div>
+
       </div>
+    </div>
 
-      <div class="row">
-        <%@cartitems.each do |cartitem|%>
-        <li><%=image_tag cartitem.item.image_url, width: "100" %>
-        <li><%=cartitem.item.name %></li>
-        <li><%=cartitem.quantity %></li>
-        <li><%= cartitem.item.amount * cartitem.quantity %></li>
-
-        <% end %>
-
-      </div>
-
-
-  </div>
-</ul>
-
-<div>
-  <%=@cart.price %>
 </div>
-
-<%=link_to "Payment", new_cart_payment_path(@cart) %>

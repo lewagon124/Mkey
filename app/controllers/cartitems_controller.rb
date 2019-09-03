@@ -18,6 +18,15 @@ class CartitemsController < ApplicationController
 
     # redirect_to new_cart_path(cartitem: @cartitem, item: @item)
   end
+  def destroy
+
+    cartitem=Cartitem.find(params[:id])
+    cart= cartitem.cart
+    cart.price_cents -= cartitem.item.amount_cents
+    cart.save!
+    cartitem.destroy
+    redirect_to cart_path(current_user.current_cart)
+  end
 
   def multi_create
     item_ids = params[:ingredient_id]
