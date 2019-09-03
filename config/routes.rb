@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :cartitems, only: [:new,:create]
   end
+  resources :cartitems, only: [:destroy]
   post '/item/remove', to: "recipes#remove_to_cart"
   post '/item/add', to: "recipes#add_to_cart"
 end

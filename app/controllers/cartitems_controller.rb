@@ -17,5 +17,11 @@ class CartitemsController < ApplicationController
 
     # redirect_to new_cart_path(cartitem: @cartitem, item: @item)
   end
+  def destroy
+
+    @cartitem=Cartitem.find(params[:id])
+    @cartitem.destroy
+    redirect_to cart_path(@cartitem.cart)
+  end
 
 end
