@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :set_cart
+  before_action :set_cart, except: :index
 
   def new
   end
@@ -27,13 +27,16 @@ class PaymentsController < ApplicationController
 
   def index
     @user=current_user
-    @cart=current_cart
+    @cart=Cart.find(params[:cart_id])
+    @confirmation=@cart.id
     current_user.empty_cart
+    @cart.destroy!
   end
 
 private
 
   def set_cart
+    # binding.pry
     @cart = current_user.carts.where(status: false).find(params[:cart_id])
   end
 
