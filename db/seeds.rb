@@ -12,14 +12,14 @@ Item.destroy_all
 
 
 chen = User.create(
-  email: "chen01@gmail.com",
-  password: "mokey1"
+  email: "1@mokey.com",
+  password: "1mokey"
 )
 
 # Recipe 1
 chicken = Recipe.new(
   name: "Pasta Chicken Salad",
-  video: File.open("./app/assets/images/recipes/recipe_chicken.mp4"),
+  video: File.open("./app/asset s/images/recipes/recipe_chicken.mp4"),
   image: File.open("./app/assets/images/recipes/recipe_salad.png"),
   desc: "Salads so luscious, they deserve the starring role in your meal.",
   prep_time: 10,
@@ -41,23 +41,23 @@ caesar = Item.create!({name: 'Caesar Salad Dressing ', amount_cents: '899', imag
 Ingredient.create!({ item: caesar, recipe: chicken })
 
 parmesan = Item.create!({name: 'Parmesan ', amount_cents: '899', image: File.open('./app/assets/images/ingredients/parmesan.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: parmesan.id, recipe: chicken})
+Ingredient.create!({ item_id: parmesan.id, recipe: chicken, quantity:"10 oz"})
 croutons = Item.create!({name: 'Croutons ', amount_cents: '299', image: File.open('./app/assets/images/ingredients/croutons.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: croutons.id, recipe: chicken})
+Ingredient.create!({ item_id: croutons.id, recipe: chicken, quantity:"1 cup"})
 grape = Item.create!({name: 'Grape Tomatoes ', amount_cents: '499', image: File.open('./app/assets/images/ingredients/tomatoes.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: grape.id, recipe: chicken})
+Ingredient.create!({ item_id: grape.id, recipe: chicken, quantity:"5 ct"})
 romaine = Item.create!({name: 'Romaine Lettuce ', amount_cents: '399', image: File.open('./app/assets/images/ingredients/lettuce.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: romaine.id, recipe: chicken})
+Ingredient.create!({ item_id: romaine.id, recipe: chicken, quantity:"1 ct"})
 pepper = Item.create!({name: 'Pepper ', amount_cents: '199', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: pepper.id, recipe: chicken})
+Ingredient.create!({ item_id: pepper.id, recipe: chicken, quantity:"2 oz"})
 salt = Item.create!({name: 'Salt ', amount_cents: '99', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: salt.id, recipe: chicken})
+Ingredient.create!({ item_id: salt.id, recipe: chicken, quantity:"1 oz"})
 olive = Item.create!({name: 'Olive Oil ', amount_cents: '829', image: File.open('./app/assets/images/ingredients/olive_oil.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: olive.id, recipe: chicken})
+Ingredient.create!({ item_id: olive.id, recipe: chicken, quantity:"15 oz"})
 breasts = Item.create!({name: 'Chicken Breasts', amount_cents: '1599', image: File.open('./app/assets/images/ingredients/chicken.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: breasts.id, recipe: chicken})
+Ingredient.create!({ item_id: breasts.id, recipe: chicken, quantity:"4 ct"})
 farfalle = Item.create!({name: 'Farfalle Pasta', amount_cents: '525', image: File.open('./app/assets/images/ingredients/penne.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: farfalle.id, recipe: chicken})
+Ingredient.create!({ item_id: farfalle.id, recipe: chicken, quantity:"4 cups"})
 
 # Recipe 2
 hashbrown = Recipe.new(
@@ -82,22 +82,22 @@ hashbrown_steps = Step.create!([
 
 # ingredients
 potato = Item.create!({name: 'Potato', amount_cents: '499', image: File.open('./app/assets/images/ingredients/potatoes.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: potato.id, recipe: hashbrown })
+Ingredient.create!({ item_id: potato.id, recipe: hashbrown, quantity:"2 cups ct" })
 
 cheddar = Item.create!({name: 'Cheddar Cheese ', amount_cents: '699', image: File.open('./app/assets/images/ingredients/cheddar.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: cheddar.id, recipe: hashbrown})
+Ingredient.create!({ item_id: cheddar.id, recipe: hashbrown, quantity:"1 ct"})
 
 egg = Item.create!({name: 'Eggs', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: egg.id, recipe: hashbrown})
+Ingredient.create!({ item_id: egg.id, recipe: hashbrown, quantity:"3 ct"})
 
 onion = Item.create!({name: 'Onions', amount_cents: '129', image: File.open('./app/assets/images/ingredients/yellow_onion.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: onion.id, recipe: hashbrown})
+Ingredient.create!({ item_id: onion.id, recipe: hashbrown, quantity:"1 ct"})
 
 scallion = Item.create!({name: 'Scallion ', amount_cents: '99', image: File.open('./app/assets/images/ingredients/scallion.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: scallion.id, recipe: hashbrown})
+Ingredient.create!({ item_id: scallion.id, recipe: hashbrown, quantity:"3 ct"})
 
 salt_pepper = Item.create!({name: 'Salt & Pepper', amount_cents: '99', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: salt.id, recipe: hashbrown})
+Ingredient.create!({ item_id: salt.id, recipe: hashbrown, quantity:"4 oz"})
 
 
 # recipe #3
@@ -128,16 +128,16 @@ Cut the pastry sheets into 9 squares. ", recipe_id: chocobread.id},
 
 # ingredients
 puff = Item.create!({name: 'Puff Pastry', amount_cents: '399', image: File.open('./app/assets/images/ingredients/puff.png'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: puff.id, recipe: chocobread })
+Ingredient.create!({ item_id: puff.id, recipe: chocobread, quantity:"17.3 oz" })
 
 egg = Item.create!({name: 'Eggs', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: egg.id, recipe: chocobread})
+Ingredient.create!({ item_id: egg.id, recipe: chocobread, quantity:"1 ct"})
 
 hazelnut = Item.create!({name: 'Hazelnut spread', amount_cents: '329', image: File.open('./app/assets/images/ingredients/hazelnut.png'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: hazelnut.id, recipe: chocobread})
+Ingredient.create!({ item_id: hazelnut.id, recipe: chocobread, quantity:"1/2 cup"})
 
 spray = Item.create!({name: 'Nonstick Spray', amount_cents: '329', image: File.open('./app/assets/images/ingredients/spray.png'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: spray.id, recipe: chocobread})
+Ingredient.create!({ item_id: spray.id, recipe: chocobread, quantity:"1/2 cup"})
 
 
 #recipe #4
@@ -196,25 +196,25 @@ salad_steps = Step.create!([
   ])
 
 cucumber = Item.create!({name: 'Cucumber', amount_cents: '129', image: File.open('./app/assets/images/ingredients/cucumber.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: cucumber.id, recipe: salad})
+Ingredient.create!({ item_id: cucumber.id, recipe: salad, quantity:"1 ct"})
 
 tomatoes = Item.create!({name: 'Tomatoes', amount_cents: '429', image: File.open('./app/assets/images/ingredients/tomatoes.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: tomatoes.id, recipe: salad})
+Ingredient.create!({ item_id: tomatoes.id, recipe: salad, quantity:"4 ct"})
 
 avocadoes = Item.create!({name: 'Avocadoes', amount_cents: '399', image: File.open('./app/assets/images/ingredients/avocado.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: avocadoes.id, recipe: salad})
+Ingredient.create!({ item_id: avocadoes.id, recipe: salad, quantity:"3 ct"})
 
 red_onion = Item.create!({name: 'Red Onion', amount_cents: '79', image: File.open('./app/assets/images/ingredients/red_onion.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: red_onion.id, recipe: salad})
+Ingredient.create!({ item_id: red_onion.id, recipe: salad, quantity:"1/2"})
 
 parsley = Item.create!({name: 'Cilantro', amount_cents: '179', image: File.open('./app/assets/images/ingredients/parsley.jpg'), condiment: 'FALSE'})
-Ingredient.create!({ item_id: parsley.id, recipe: salad})
+Ingredient.create!({ item_id: parsley.id, recipe: salad, quantity:"1/4 cup"})
 
 olive = Item.create!({name: 'Olive Oil ', amount_cents: '829', image: File.open('./app/assets/images/ingredients/olive_oil.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: olive.id, recipe: salad})
+Ingredient.create!({ item_id: olive.id, recipe: salad, quantity:"1/4 cup"})
 
 salt_pepper = Item.create!({name: 'Salt & Pepper', amount_cents: '99', image: File.open('./app/assets/images/ingredients/saltpepper.jpg'), condiment: 'TRUE'})
-Ingredient.create!({ item_id: salt.id, recipe: salad})
+Ingredient.create!({ item_id: salt.id, recipe: salad, quantity:"3 oz"})
 
 
 # recipe 6
@@ -294,13 +294,3 @@ For the broccoli, fill a medium pot halfway with water. Add a dash of salt and s
 #   {number: 3, content: " ", recipe_id: pasta.id},
 #   {number: 4, content: "Enjoy ", recipe_id: pasta.id}
 #   ])
-
-
-
-
-
-
-
-
-
-

@@ -14,11 +14,11 @@
 
 .searchform {
   #search-bar {
-    display: inline-block;
     font-size: 20px;
   }
 
   .fa-search {
+    display: inline-block;
     color: white;
   }
 
@@ -79,3 +79,44 @@
   align: right;
   margin: 0px;
 }
+
+  // Shopping cart insert css from https://codepen.io/hughker/pen/PzZOQP
+  .fa-shopping-cart{
+    font-size: 34px;
+  }
+  .badge:empty{
+    display: flex;
+  }
+
+  *.icon-blue {
+    color: #0088cc;
+  }
+
+  *.icon-white {
+    color: white;
+  }
+
+  i {
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .badge:after {
+    content: attr(data-count);
+    position: absolute;
+    background: #ff5e61;
+    height: 1.5rem;
+    top: 0rem;
+    right: 2.5rem;
+    width: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    color: white;
+    /* border: 1px solid #ff6600; */
+    font-family: sans-serif;
+    font-weight: bold;
+  }
