@@ -19,7 +19,7 @@ chen = User.create(
 # Recipe 1
 chicken = Recipe.new(
   name: "Pasta Chicken Salad",
-  video: File.open("./app/asset s/images/recipes/recipe_chicken.mp4"),
+  video: File.open("./app/assets/images/recipes/recipe_chicken.mp4"),
   image: File.open("./app/assets/images/recipes/recipe_salad.png"),
   desc: "Salads so luscious, they deserve the starring role in your meal.",
   prep_time: 10,

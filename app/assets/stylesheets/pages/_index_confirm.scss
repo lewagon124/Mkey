@@ -1,0 +1,49 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: $my-font;
+  padding: 50px;
+  color: $med;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+
+  p {
+    font-family: $my-font;
+    font-size: 18px;
+    color: $med;
+  }
+}
+
+.bottom {
+  // display: flex;
+  // justify-content: space-around;
+  // align-content: center;
+  font-family: $my-font;
+
+}
+
+.home-btn {
+  cursor: pointer;
+  padding: 8px;
+  width: 136px;
+  background-color: $mokey;
+  border-radius: 4px;
+  color: white;
+
+  p {
+    text-align: center;
+  }
+
+  // border: 1px solid $mokey;
+}
+
+.back-home {
+  color: $light;
+}
