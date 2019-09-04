@@ -6,5 +6,12 @@
       <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>"/>
     </label>
   <% end %>
-  <%= submit_tag "Add Those Things" ,class: "btn btn-succes btn-lg btn-block" %>
+  <h3 class="price recipe-page-title">
+    $<%= @sum/10%>
+    <small>($4/serving)</small>
+  </h3>
+  <div class="show-btn">
+    <%= submit_tag "Add to Cart", class: "cart-btn" %>
+    <%= link_to "See more recipes", recipes_path, class: "about-pages show-btn recipes-btn"%>
+  </div>
 <% end %>
