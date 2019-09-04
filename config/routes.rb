@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :carts do
     resources :payments, only: [:new, :create, :index]
   end
-  resources :recipes
+  resources :recipes do
+    post 'multi_create', to: "cartitems#multi_create", as: :multi_create
+  end
+
   post "/search", to: "recipes#search"
   resources :items do
     resources :cartitems, only: [:new, :create]
@@ -12,5 +15,4 @@ Rails.application.routes.draw do
   # post '/item/remove', to: "recipes#remove_to_cart"
   # post '/item/add', to: "recipes#add_to_cart"
   resources :cartitems, only: [:destroy]
-  post '/multi_create', to: "cartitems#multi_create", as: :multi_create
 end

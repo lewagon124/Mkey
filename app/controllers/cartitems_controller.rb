@@ -37,6 +37,8 @@ class CartitemsController < ApplicationController
   end
 
   def multi_create
+    # binding.pry
+    @recipe = Recipe.find(params[:recipe_id])
     item_ids = params[:ingredient_id]
 
 
@@ -62,9 +64,5 @@ class CartitemsController < ApplicationController
         update.save
       end
     end
-
-
-
-
   end
 end
