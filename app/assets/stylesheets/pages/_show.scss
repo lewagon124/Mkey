@@ -232,15 +232,17 @@ hr {
  }
 }
 .zoom{
-  position: absolute;
-  top: 40px;
-  right: 50%;
-  width: 40px;
-  opacity: 0;
-  animation: zoom 1s ease forwards;
+ position: absolute;
+ top:30px;
+ right: 50%;
+ width: 40px;
+ opacity: 0;
+ z-index:1000000000000;
+ animation: zoom 1s ease forwards;
 }
 @keyframes zoom{
-  0%{opacity: 0}
-  50%{opacity: 1}
-  100%{opacity: 0; right: 40px}
+ 0%{opacity: 0}
+ 50%{opacity: 1}
+ 100%{opacity: 0; right: 40px}
 }
+
