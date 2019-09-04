@@ -29,9 +29,10 @@ class CartitemsController < ApplicationController
   end
 
   def multi_create
+    # binding.pry
+    @recipe = Recipe.find(params[:recipe_id])
     item_ids = params[:ingredient_id]
     item_ids.each do |item_id|
-
       @item=Item.find(item_id)
       @cartitem=Cartitem.new(quantity: 1)
       @cartitem.item = @item
@@ -44,7 +45,5 @@ class CartitemsController < ApplicationController
       end
       @cartitem.save
     end
-
   end
-
 end

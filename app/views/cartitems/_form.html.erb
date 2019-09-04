@@ -1,0 +1,10 @@
+<%= form_tag recipe_multi_create_path(@recipe), remote: true do %>
+<% @recipe.ingredients.each do |ingredient| %>
+  <label class="image-checkbox">
+    <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
+    <% @sum=ingredient.item.amount_cents %>
+      <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>"/>
+    </label>
+  <% end %>
+  <%= submit_tag "Add Those Things" ,class: "btn btn-succes btn-lg btn-block" %>
+<% end %>

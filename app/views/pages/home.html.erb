@@ -12,123 +12,125 @@
 </div>
 
 <%@recipes1 = @recipes[0..2]%>
-<%@recipes2 = @recipes[3..5]%>
+  <%@recipes2 = @recipes[3..5]%>
 
-  <div class="container p-5">
-    <h1 class="text-center p-4"> What is trending! </h1>
-    <div class="row">
-      <% @recipes1.each do |recipe| %>
-        <div class="col-md-4 recipe-card">
-          <div class="card mb-2">
-            <div class="recipe-video-wrapper">
-              <div class="recipe-video-container">
-                <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
-              </div>
-            </div>
+    <div class="container p-5">
+      <h1 class="text-center p-4">
+        What is trending!
+      </h1>
+      <div class="row">
+        <% @recipes1.each do |recipe| %>
+          <div class="col-md-4 recipe-card">
             <a href="/recipes/<%= recipe.id %>">
-              <div class="card-body">
-                <h4 class="card-title"><%= recipe.name %></h4>
-                <div class="d-flex justify-content-between align-items-end">
-                  <div class="card-left">
-                    <p class="card-text"><%= recipe.desc %></p>
+              <div class="card mb-2">
+                <div class="recipe-video-wrapper">
+                  <div class="recipe-video-container-home">
+                    <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
                   </div>
-                  <div class="card-right">
-                    <h5 class="price">$4/serving</h5>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title"><%= recipe.name %></h4>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div class="card-left">
+                      <p class="card-text"><%= recipe.desc %></p>
+                    </div>
+                    <div class="card-right">
+                      <h5 class="price">$4/serving</h5>
+                    </div>
                   </div>
                 </div>
               </div>
             </a>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <!-- What is trending Carousel -->
+    <!-- What is trending Carousel -->
 
-
-
-  <div class="container p-5">
-    <h1 class="text-center p-4"> Popular Recipes </h1>
-    <div class="row">
-      <% @recipes2.each do |recipe| %>
-        <div class="col-md-4 recipe-card">
-          <div class="card mb-2">
-            <div class="recipe-video-wrapper">
-              <div class="recipe-video-container">
-                <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
-              </div>
-            </div>
+    <div class="container p-5">
+      <h1 class="text-center p-4">
+        Popular Recipes
+      </h1>
+      <div class="row">
+        <% @recipes2.each do |recipe| %>
+          <div class="col-md-4 recipe-card">
             <a href="/recipes/<%= recipe.id %>">
-              <div class="card-body">
-                <h4 class="card-title"><%= recipe.name %></h4>
-                <div class="d-flex justify-content-between align-items-end">
-                  <div class="card-left">
-                    <p class="card-text"><%= recipe.desc %></p>
+              <div class="card mb-2">
+                <div class="recipe-video-wrapper">
+                  <div class="recipe-video-container-home">
+                    <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
                   </div>
-                  <div class="card-right">
-                    <h5 class="price">$4/serving</h5>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title"><%= recipe.name %></h4>
+                  <div class="d-flex justify-content-between align-items-end">
+                    <div class="card-left">
+                      <p class="card-text"><%= recipe.desc %></p>
+                    </div>
+                    <div class="card-right">
+                      <h5 class="price">$4/serving</h5>
+                    </div>
                   </div>
                 </div>
               </div>
             </a>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> <div class="bg-modal"> <div class="close">+</div> <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3"> <div class="container-login"> <form class="login100-form validate-form">
-  <span class="login100-form-title pb-4"> Sign In </span> <div class="wrap-input100 validate-input mb-2" data-validate="Enter username or email"> <input class="input100" type="text" name="username" placeholder="username or email"> <span
-  class="focus-input100"></span> </div> <div class="wrap-input100 validate-input mb-2" data-validate="Enter password"> <input class="input100" type="password" name="pass" placeholder="password"> <span class="focus-input100"></span> </div> <div
-  class="container-login100-form-btn"> <button class="login100-form-btn"> Sign In </button> </div> <div class="text-center pt-5 pb-2"> <span class="txt1"> Or login with </span> </div> <div class="d-flex justify-content-center pb-5"> <a href="#"
-  class="login100-social-item"> <img src="https://img.icons8.com/plasticine/2x/facebook-new.png" alt="facebook"> </a> <a href="#" class="login100-social-item"> <img src="https://img.icons8.com/plasticine/2x/google-logo.png" alt="GOOGLE"> </a> </div>
-  </form> </div> <div class="vl"></div> <div class="container-signup"> <form class="login100-form validate-form"> <span class="login100-form-title p-b-37"> Register </span> <div class="container-login100-form-btn" id="create-account"> <button
-  class="login100-form-btn"> Create </button> </div> <div class="text-center pt-5 pb-2"></div> <div class="text-center"></div> </form> </div> </div> </div> -->
+    <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> <div class="bg-modal"> <div class="close">+</div> <div class="wrap-login100 pl-5 pr-5 pt-5 pb-3"> <div class="container-login"> <form class="login100-form validate-form">
+    <span class="login100-form-title pb-4"> Sign In </span> <div class="wrap-input100 validate-input mb-2" data-validate="Enter username or email"> <input class="input100" type="text" name="username" placeholder="username or email"> <span
+    class="focus-input100"></span> </div> <div class="wrap-input100 validate-input mb-2" data-validate="Enter password"> <input class="input100" type="password" name="pass" placeholder="password"> <span class="focus-input100"></span> </div> <div
+    class="container-login100-form-btn"> <button class="login100-form-btn"> Sign In </button> </div> <div class="text-center pt-5 pb-2"> <span class="txt1"> Or login with </span> </div> <div class="d-flex justify-content-center pb-5"> <a href="#"
+    class="login100-social-item"> <img src="https://img.icons8.com/plasticine/2x/facebook-new.png" alt="facebook"> </a> <a href="#" class="login100-social-item"> <img src="https://img.icons8.com/plasticine/2x/google-logo.png" alt="GOOGLE"> </a> </div>
+    </form> </div> <div class="vl"></div> <div class="container-signup"> <form class="login100-form validate-form"> <span class="login100-form-title p-b-37"> Register </span> <div class="container-login100-form-btn" id="create-account"> <button
+    class="login100-form-btn"> Create </button> </div> <div class="text-center pt-5 pb-2"></div> <div class="text-center"></div> </form> </div> </div> </div> -->
 
-  <!--How it work section-->
+    <!--How it work section-->
 
-  <div class="hiw-container">
-    <h2 class="text-center p-5">Shopping on Mokey is easy!</h2>
-    <div class="hiw-cards">
-      <div class="hiw-card">
-        <div class="hiw-card-container">
-          <div class="hiw-container-img">
-            <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/online-shopping.png?" alt="Online-shopping">
+    <div class="hiw-container">
+      <h2 class="text-center p-5">Shopping on Mokey is easy!</h2>
+      <div class="hiw-cards">
+        <div class="hiw-card">
+          <div class="hiw-card-container">
+            <div class="hiw-container-img">
+              <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/online-shopping.png?" alt="Online-shopping">
+            </div>
+            <h4>You Choose</h4>
+            <p>You order on Mokey and schedule the delivery. Order before 5pm for the same-day delivery.🎉</p>
           </div>
-          <h4>You Choose</h4>
-          <p>You order on Mokey and schedule the delivery. Order before 5pm for the same-day delivery.🎉</p>
         </div>
-      </div>
 
-      <div class="hiw-card">
-        <div class="hiw-card-container">
-          <div class="hiw-container-img">
-            <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/car-icon-v2-190811.png" alt="">
+        <div class="hiw-card">
+          <div class="hiw-card-container">
+            <div class="hiw-container-img">
+              <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/car-icon-v2-190811.png" alt="">
+            </div>
+            <h4>We Shop &amp; Deliver</h4>
+            <p>One of our shoppers will carefully gather the goodies and deliver to your door between 8-11pm.😉</p>
           </div>
-          <h4>We Shop &amp; Deliver</h4>
-          <p>One of our shoppers will carefully gather the goodies and deliver to your door between 8-11pm.😉</p>
         </div>
-      </div>
 
-      <div class="hiw-card  ">
-        <div class="hiw-card-container">
-          <div class="hiw-container-img">
-            <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/no-bs-v2-190811.png" alt="">
+        <div class="hiw-card  ">
+          <div class="hiw-card-container">
+            <div class="hiw-container-img">
+              <img src="//cdn.shopify.com/s/files/1/1977/2911/t/7/assets/no-bs-v2-190811.png" alt="">
+            </div>
+            <h4>Simple &amp; No B.S. fees</h4>
+            <p class="p-tag">No
+              <mem></mem>bership, no tip, no service fee, no delivery fee.<strong>
+                What you see is what you pay.</strong>
+            </p>
+            <a href="#" class="btn-learn">
+              Mokey makes money?</a>
           </div>
-          <h4>Simple &amp; No B.S. fees</h4>
-          <p class="p-tag">No
-            <mem></mem>bership, no tip, no service fee, no delivery fee.<strong>
-              What you see is what you pay.</strong>
-          </p>
-          <a href="#" class="btn-learn">
-            Mokey makes money?</a>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
 
-  <%= javascript_pack_tag("home") %>
+    <%= javascript_pack_tag("home") %>
 
-  <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
+    <!-- <button class='btn btn-primary btn-lg' id="login-btn">Sign In</button> -->
