@@ -64,7 +64,7 @@ hashbrown = Recipe.new(
   name: "Hash-Brown Waffles",
   video: File.open("./app/assets/images/recipes/hashbrown.mp4"),
   image: File.open("./app/assets/images/recipes/hashbrown.png"),
-  desc: "Simply delish!",
+  desc: "Quick, easy, and simply delicious!",
   prep_time: 10,
   cook_time: 0,
 )
@@ -180,7 +180,7 @@ salad = Recipe.new(
   name: "Cucumber, Tomato, and Avocado Salad",
   video: File.open("./app/assets/images/recipes/salad.mp4"),
   image: File.open("./app/assets/images/recipes/salad.png"),
-  desc: "A delish salad to enjoy all year round.",
+  desc: "A delish salad to enjoy all year.",
   prep_time: 12,
   cook_time: 0,
 )
@@ -222,7 +222,7 @@ salmon = Recipe.new(
   name: "Maple-Glazed Salmon",
   video: File.open("./app/assets/images/recipes/salmon.mp4"),
   image: File.open("./app/assets/images/recipes/salmon.png"),
-  desc: "Delicious maple glazed salmon.",
+  desc: "Fast and delicious maple glazed salmon.",
   prep_time: 12,
   cook_time: 0,
 )
