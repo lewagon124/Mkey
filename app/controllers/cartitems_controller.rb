@@ -5,18 +5,26 @@ class CartitemsController < ApplicationController
   def create
 
     @item=Item.find(params[:item_id])
-    @cartitem=Cartitem.new(quantity: 1)
-    @cartitem.item = @item
-    if current_user.current_cart
-      @cartitem.cart = current_user.current_cart
-      @cartitem.cart.price_cents += @item.amount_cents
-      @cartitem.cart.save
-    else
-      @cartitem.cart=Cart.create(user: current_user, total: 0)
+    @cart= current_cart
+    if @cart.
+      raise
+      # if !@item.exist?
+        @cartitem=Cartitem.new(quantity: 1)
+        @cartitem.item = @item
+        if current_user.current_cart
+          @cartitem.cart = current_user.current_cart
+          @cartitem.cart.price_cents += @item.amount_cents
+          @cartitem.cart.save
+        else
+          @cartitem.cart=Cart.create(user: current_user, total: 0)
+        end
+        @cartitem.save
+    # else
+    #   @cartitem = Cartitem.find_by(params[:id])
+    #   @cartitem.quantity +=1
+    #   @cartitem.save
     end
-    @cartitem.save
-
-    # redirect_to new_cart_path(cartitem: @cartitem, item: @item)
+      # redirect_to new_cart_path(cartitem: @cartitem, item: @item)
   end
   def destroy
 
@@ -30,21 +38,33 @@ class CartitemsController < ApplicationController
 
   def multi_create
     item_ids = params[:ingredient_id]
+
+
+
     item_ids.each do |item_id|
 
-      @item=Item.find(item_id)
-      @cartitem=Cartitem.new(quantity: 1)
-      @cartitem.item = @item
-      if current_user.current_cart
-        @cartitem.cart = current_user.current_cart
-        @cartitem.cart.price_cents += @item.amount_cents
-        @cartitem.cart.save
+      if current_user.current_cart.cartitems.find_by(item_id: params[:ingredient_id]).nil?
+        @item=Item.find(item_id)
+          @cartitem=Cartitem.new(quantity: 1)
+          @cartitem.item = @item
+          if current_user.current_cart
+            @cartitem.cart = current_user.current_cart
+            @cartitem.cart.price_cents += @item.amount_cents
+            @cartitem.cart.save
+          else
+            @cartitem.cart=Cart.create(user: current_user, total: 0)
+          end
+          @cartitem.save
       else
-        @cartitem.cart=Cart.create(user: current_user, total: 0)
+
+        update = current_user.current_cart.cartitems.find_by(item_id: params[:ingredient_id])
+        update.quantity +=1
+        update.save
       end
-      @cartitem.save
     end
 
-  end
 
+
+
+  end
 end

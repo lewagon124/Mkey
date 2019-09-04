@@ -67,9 +67,20 @@
           </ol>
         </div>
 
-        <!-- <div class="text3"> <h2>Preparations</h2> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex
-        distinctio explicabo ipsa.</p> </div> <div> -->
+
       </section>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
 
       <%= javascript_pack_tag("show") %>
+<script>
+  $("<%submit_tag%>").on("click",function(){
+    $(this).closest("label")
+      .find("img")
+      .clone()
+      .addClass("zoom")
+      .appendTo("body");
+    setTimeout(function(){
+      $(".zoom").remove();
+    },5000);
+  });
+</script>
