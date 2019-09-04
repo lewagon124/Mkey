@@ -33,9 +33,10 @@
             <ol>
               <% @recipe.ingredients.each do |ingredient| %>
                 <li>
-                  1-Tsp
+                  <%= ingredient.quantity%>
                   <%= ingredient.item.name%>
                 </li>
+
               <% end %>
             </ol>
           </div>
@@ -66,7 +67,6 @@
             <% end %>
           </ol>
         </div>
-
         <!-- <div class="text3"> <h2>Preparations</h2> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex
         distinctio explicabo ipsa.</p> </div> <div> -->
       </section>
