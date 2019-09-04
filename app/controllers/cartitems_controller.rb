@@ -41,11 +41,8 @@ class CartitemsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     item_ids = params[:ingredient_id]
 
-
-
     item_ids.each do |item_id|
-
-      if current_user.current_cart.cartitems.find_by(item_id: params[:ingredient_id]).nil?
+      if current_user.current_cart.cartitems.find_by(item_id:item_id).nil?
         @item=Item.find(item_id)
           @cartitem=Cartitem.new(quantity: 1)
           @cartitem.item = @item
@@ -59,7 +56,7 @@ class CartitemsController < ApplicationController
           @cartitem.save
       else
 
-        update = current_user.current_cart.cartitems.find_by(item_id: params[:ingredient_id])
+        update = current_user.current_cart.cartitems.find_by(item_id:item_id)
         update.quantity +=1
         update.save
       end
