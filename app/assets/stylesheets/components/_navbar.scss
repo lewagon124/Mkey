@@ -13,6 +13,8 @@
 }
 
 .searchform {
+  display: inline-flex;
+
   #search-bar {
     font-size: 20px;
   }
@@ -20,18 +22,21 @@
   .fa-search {
     display: inline-block;
     color: white;
+    font-size: 23px;
+    padding-top: 25px;
   }
 
-  .form-control{
+  .form-control {
     background: transparent;
     border: transparent;
+    margin-left: 0px;
   }
-  ::placeholder{
+
+  ::placeholder {
     color: white;
     border-bottom: 2px solid rgba(250,250,250,0.8);
     font-size: 20px;
   }
-
 }
 
 .navbar-lewagon .nav-link {
@@ -43,7 +48,7 @@
   font-weight: bold;
 }
 
-.nav-logo img{
+.nav-logo img {
   height: 60px;
   padding-right: 80%;
 }
@@ -73,18 +78,19 @@
   font-size: 24px;
 }
 
-
-.item{
-  font-size:20px;
+.item {
+  font-size: 20px;
   align: right;
-  margin: 0px;
+  margin: 0;
 }
+// Shopping cart insert css from https://codepen.io/hughker/pen/PzZOQP
 
-  // Shopping cart insert css from https://codepen.io/hughker/pen/PzZOQP
-  .fa-shopping-cart{
+.shopping-cart {
+  .fa-shopping-cart {
     font-size: 34px;
   }
-  .badge:empty{
+
+  .badge:empty {
     display: flex;
   }
 
@@ -108,7 +114,7 @@
     position: absolute;
     background: #ff5e61;
     height: 1.5rem;
-    top: 0rem;
+    top: 0;
     right: 2.5rem;
     width: 1.5rem;
     text-align: center;
@@ -120,3 +126,4 @@
     font-family: sans-serif;
     font-weight: bold;
   }
+}

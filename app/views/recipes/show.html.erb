@@ -3,8 +3,8 @@
 
     <div class="about-title">
 
-      <video autoplay="autoplay" muted="muted" loop="loop" id="video">
-        <source src="<%= @recipe.video %>" type="video/mp4" id="recipe-video">
+      <video autoplay="autoplay" autoplay loop controls muted id="video" class="video-fluid z-depth-1">
+        <source src="<%= @recipe.video %>" type="video/mp4" class="recipe-video">
       </video>
       <!-- <img src=" <%= @recipe.image %> " alt=""> -->
     </div>
