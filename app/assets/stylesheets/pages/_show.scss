@@ -26,16 +26,17 @@
   width: 50%;
 
   .recipe-page-title {
-    padding: 40px 20px;
+    padding: 16px 28px;
+    font-family: $my-font;
   }
 
   .ingredient-name-container{
-    padding: 40px;
+    padding: 18px 28px;
   }
 
   .ingredient-container {
     display:block;
-    padding: 40px;
+    padding: 8px;
     .ingredient-image {
       max-height: 100%;
       max-width: 100%;
@@ -43,6 +44,72 @@
       // border: 5px solid;
     }
   }
+
+  .show-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+    .recipes-btn {
+      background-color: $light;
+      color: $med;
+      text-align: center;
+      font-family: $my-font;
+      justify-content: center;
+      font-size: 16px;
+      border-radius: 4px;
+      padding: 5px;
+      margin: 0px 20px;
+      width: 230px;
+    }
+    .cart-btn {
+      background: $med;
+      color: white;
+      border-radius: 4px;
+      padding: 5px;
+      margin: 0px 20px;
+      width: 230px;
+
+  }
+}
+
+.prep {
+  padding: 44px 0px 16px 0px;
+
+}
+
+
+.checkout {
+  cursor: pointer;
+  padding: 5px 95px;
+  color: white;
+  background-color: $mokey;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: $my-font;
+  width: 394px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.check {
+  margin-top: 30px;
+  text-align: center;
+  font-family: $my-font;
+  justify-content: space-between;
+  align-items: center;
+  // display: flex;
+  // align-items: center;
+}
+
+.directions {
+  padding-left: 28px;
+  li {
+    padding-bottom: 4px;
+  }
+}
 
 // insert css from https://codepen.io/kskhr/pen/pRwKjg
 
@@ -80,11 +147,18 @@
 //   display: block !important;
 // }
 
+.item-ingredient {
+
+  li {
+    padding-bottom: 4px;
+  }
+}
 
 
 hr {
-  border-top: 3px solid;
-  background: white;
+  border-top: 1px solid $mokey;
+  width: 75%;
+  margin: 0 auto;
 }
 
   div {

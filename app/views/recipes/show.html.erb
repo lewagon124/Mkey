@@ -12,7 +12,7 @@
     <div class="about-pages">
       <h1 class="recipe-name recipe-page-title"><%= @recipe.name %></h1>
       <div class="text1">
-        <h4 class="ingredient recipe-page-title">Ingredients</h4>
+        <h4 class="ingredient recipe-page-title">Select what you need:</h4>
         <div class="ingredient-container">
 
           <%= form_tag multi_create_path do %>
@@ -25,14 +25,29 @@
                 </label>
                 <!-- </div> -->
               <% end %>
-              <%= submit_tag "Add Those Things", class: "btn btn-succes btn-lg btn-block" %>
+              <h3 class="price recipe-page-title">
+                $<%= @sum/10%>
+                <small>
+                  ($4/serving)</small>
+              </h3>
+              <div class="show-btn">
+                <%= submit_tag "Add to Cart", class: "cart-btn" %>
+                <%= link_to "See more recipes", recipes_path, class: "about-pages show-btn recipes-btn"%>
+              </div>
+
             <% end %>
 
           </div>
           <div class="ingredient-name-container">
-            <ol>
+            <h4 class="prep">
+              Pre-time:
+              <%=@recipe.prep_time%>
+              mins
+            </h4>
+
+            <ol class="item-ingredient">
               <% @recipe.ingredients.each do |ingredient| %>
-                <li>
+                <li>-
                   <%= ingredient.quantity%>
                   <%= ingredient.item.name%>
                 </li>
@@ -40,32 +55,23 @@
               <% end %>
             </ol>
           </div>
-
-          <h4 class="recipe-page-title">
-            Pre-time:
-            <%=@recipe.prep_time%>
-            mins
-          </h4>
-          <h3 class="price recipe-page-title">
-            $<%= @sum/10%>
-            <small>
-              ($4/serving)</small>
-          </h3>
-          <div>
-            <%= link_to "Checkout", cart_path(current_user.current_cart), class: "btn btn-primary"%>
-          </div>
         </div>
 
         <hr>
         <div class="text2">
           <h4 class="ingredient recipe-page-title">Preparation</h4>
-          <ol>
+          <ol class="directions">
             <% @recipe.steps.each do |step| %>
-              <li><%= step.number%>
+              <li><%= step.number%> -
                 <%= step.content%>
               </li>
             <% end %>
           </ol>
+        </div>
+        <div>
+          <div class="check">
+          <%= link_to "Shopping Cart", cart_path(current_user.current_cart), class: "checkout"%>
+          </div>
         </div>
         <!-- <div class="text3"> <h2>Preparations</h2> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic consequatur atque, nihil repudiandae laboriosam omnis at doloremque nulla tenetur eius. Nulla quas doloribus atque illo ex
         distinctio explicabo ipsa.</p> </div> <div> -->
