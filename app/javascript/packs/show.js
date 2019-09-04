@@ -40,8 +40,8 @@ $(".image-checkbox").on("click", function (e) {
 
 
 // slow the video
-var videos = document.querySelectorAll("#recipe-video")
+var videos = document.querySelectorAll(".video-fluid")
 
 videos.forEach(video => {
-  video.playbackRate = 0.65;
+  video.playbackRate = 0.6
 })
