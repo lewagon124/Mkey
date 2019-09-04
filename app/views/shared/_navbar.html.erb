@@ -24,7 +24,7 @@
         <li class="nav-item item shopping-cart">
 
           <%= link_to cart_path(current_user.current_cart), class: "nav-link" do%>
-            <i data-count="<%= current_user.current_cart.cartitems.count %>" class="fa fa-shopping-cart icon-white badge"></i>
+            <i data-count="<%= current_user.current_cart.cartitems.reduce(0) { |sum, num| sum + num.quantity } %>" class="fa fa-shopping-cart icon-white badge"></i>
 
           <% end %>
         </li>
