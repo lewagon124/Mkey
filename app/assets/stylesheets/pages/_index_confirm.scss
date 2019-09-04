@@ -1,3 +1,5 @@
+
+
 .top {
   display: flex;
   flex-direction: column;
@@ -11,22 +13,23 @@
 .middle {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
 
   p {
     font-family: $my-font;
     font-size: 18px;
-    color: $med;
+    color: white;
   }
 }
 
 .bottom {
-  // display: flex;
-  // justify-content: space-around;
-  // align-content: center;
-  font-family: $my-font;
 
+  h4 {
+    font-family: $my-font;
+    padding: 42px;
+    text-align: center;
+  }
 }
 
 .home-btn {
@@ -35,10 +38,13 @@
   width: 136px;
   background-color: $mokey;
   border-radius: 4px;
-  color: white;
+  margin: 20px;
+  text-align: center;
 
   p {
-    text-align: center;
+    font-family: $my-font;
+    font-size: 18px;
+    color: white;
   }
 
   // border: 1px solid $mokey;
