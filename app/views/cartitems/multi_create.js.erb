@@ -1,8 +1,9 @@
-console.log("Ajax");
+
 navbar = document.getElementById("navbar")
 navbar.innerHTML = "<%= j render 'shared/navbar'%>"
 
 ingredient = document.querySelector(".ingredient-container")
-ingredient.innerHTML = "<%= j render 'form'%>"
+ingredient.innerHTML = "<%= j render partial: 'form', locals: { subsecquent_submit: true } %>"
 
 checkboxSelection();
+setupDynamicPriceForCartItemsForm();

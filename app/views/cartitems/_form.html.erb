@@ -1,14 +1,23 @@
-<%= form_tag recipe_multi_create_path(@recipe), remote: true do %>
-<% @recipe.ingredients.each do |ingredient| %>
-  <label class="image-checkbox">
-    <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
-    <% @sum=ingredient.item.amount_cents %>
-      <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>"/>
-    </label>
+<% @sum=0 %>
+<%= form_tag recipe_multi_create_path(@recipe), remote: true, class: "add-cart-items-form" do %>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <% if ingredient.item.condiment || local_assigns[:subsecquent_submit] %>
+      <label class="image-checkbox">
+        <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
+        <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>" data-price-cents="<%= ingredient.item.amount %>"/>
+      </label>
+    <% else %>
+      <label class="image-checkbox image-checkbox-checked">
+        <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
+        <input type="checkbox" checked name="ingredient_id[]" value="<%= ingredient.item.id %>" data-price-cents="<%= ingredient.item.amount %>"/>
+      </label>
+      <% @sum +=ingredient.item.amount %>
+    <% end %>
+
   <% end %>
-  <h3 class="price recipe-page-title">
-    $<%= @sum/10%>
-    <small>($4/serving)</small>
+  <h3 class="price recipe-page-title cart-item-amount">
+    <%= humanized_money_with_symbol @sum %>
+    <!-- <small>($4/serving)</small> -->
   </h3>
   <div class="show-btn">
     <%= submit_tag "Add to Cart", class: "cart-btn" %>
