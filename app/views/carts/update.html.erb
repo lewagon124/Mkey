@@ -1,7 +1,7 @@
 <div class="containall">
   <div class="innercontainer">
     <h1>Thank you for your purchase!</h1>
-    <img src="assets/mokey.png">
+    <%= image_tag "mokey.png", alt: "alttext" %>
      <h3>Your order is on the way</h3>
      <p> Order number: <% @order.id %></p>
      <p>You will receive an email confirmation shortly at <% @user.email %></p>
