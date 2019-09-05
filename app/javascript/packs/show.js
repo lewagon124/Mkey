@@ -63,7 +63,7 @@ const calculateAndDisplayCartItemPrice = () => {
 
 window.setupDynamicPriceForCartItemsForm = setupDynamicPriceForCartItemsForm;
 
-
+setupDynamicPriceForCartItemsForm();
 // slow the video
 var videos = document.querySelectorAll(".video-fluid")
 
