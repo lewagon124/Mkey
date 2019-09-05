@@ -3,3 +3,29 @@
   margin-right: 10px;
   color: #dddddd !important;
 }
+
+#payment-stripe {
+  margin-top: 56px;
+
+  h3 {
+    padding: 10px 0px;
+  }
+}
+
+#card-element {
+  margin-bottom: 10px;
+  font-family: $my-font;
+  font-size: 16px;
+}
+
+.billing {
+  margin: 48px 0px 14px 0px;
+}
+
+.update {
+  .container {
+    margin-top: 46px;
+    background: #fafafa;
+    width: 80%;
+  }
+}
