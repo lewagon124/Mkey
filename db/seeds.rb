@@ -273,6 +273,130 @@ For the broccoli, fill a medium pot halfway with water. Add a dash of salt and s
   {number: 8, content: "Enjoy ", recipe_id: salmon.id}
   ])
 
+mac = Recipe.new(name: "3 ingredient Mac & Cheese", video: File.open("./app/assets/images/chicken.mp4"), image: File.open('./app/assets/images/macandcheese.jpg'), desc: "Easy delicious 3 ingredients dinner.", prep_time: 5, cook_time: 15, user: chen )
+
+# binding.pry
+# mac.user = chen
+mac.save!
+
+milk = Item.create!({name: 'Milk', amount_cents: '399', image: File.open('./app/assets/images/milk.jpeg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: milk.id, recipe: mac})
+
+macaroni = Item.create!({name: 'Macaroni', amount_cents: '199', image: File.open('./app/assets/images/macroni.jpeg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: macaroni.id, recipe: mac})
+
+cheddar = Item.create!({name: 'Cheddar', amount_cents: '399', image: File.open('./app/assets/images/cheese.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: cheddar.id, recipe: mac})
+
+# direcountions
+mac_steps = Step.create!([
+  {number: 1, content: "In a large pot, bring the milk to a b", recipe_id: mac.id},
+  {number: 2, content: "Add the pasta and stir constantly until the pasta is cooked, about 10 minutes.", recipe_id: mac.id},
+  {number: 3, content: "Turn off the heat, then add the cheddar. Stir until the cheese is melted and the pasta is evenly coated.", recipe_id: mac.id},
+  {number: 4, content: "Enjoy!", recipe_id: mac.id},
+  ])
+
+
+#recipe 8
+
+panchicken = Recipe.new(
+  name: "One Pan Chicken And Veggies",
+  video: File.open("./app/assets/images/chicken.mp4"),
+  image: File.open("./app/assets/images/chickenveg.jpg"),
+  desc: "Fast and delicious one pan chicken and veggies.",
+  prep_time: 20,
+  cook_time: 45,
+)
+
+panchicken.user = chen
+  panchicken.save!
+
+chicken = Item.create!({name: 'Boneless Chicken Breasts', amount_cents: '499', image: File.open('./app/assets/images/chicken.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: chicken.id, recipe: panchicken})
+
+sweetpotato = Item.create!({name: 'Sweet Potato', amount_cents: '299', image: File.open('./app/assets/images/ingredients/potatoes.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: sweetpotato.id, recipe: panchicken})
+
+broccoli = Item.create!({name: 'Broccoli', amount_cents: '399', image: File.open('./app/assets/images/ingredients/brocoli.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: broccoli.id, recipe: panchicken})
+
+garlic = Item.create!({name: 'Garlic', amount_cents: '199', image: File.open('./app/assets/images/ingredients/garlic.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: garlic.id, recipe: panchicken})
+
+rosemary = Item.create!({name: 'Rosemary', amount_cents: '199', image: File.open('./app/assets/images/rosemary.jpeg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: rosemary.id, recipe: panchicken})
+
+paprika = Item.create!({name: 'Paprika', amount_cents: '99', image: File.open('./app/assets/images/ingredients/paprika.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: paprika.id, recipe: panchicken})
+
+salt = Item.create!({name: 'Salt', amount_cents: '99', image: File.open('./app/assets/images/salt.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: salt.id, recipe: panchicken})
+
+pepper = Item.create!({name: 'Pepper', amount_cents: '99', image: File.open('./app/assets/images/pepper.jpeg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: pepper.id, recipe: panchicken})
+
+olive = Item.create!({name: 'Olive Oil', amount_cents: '399', image: File.open('./app/assets/images/oliveoil.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: olive.id, recipe: panchicken})
+
+# direcountions
+panchicken_steps = Step.create!([
+  {number: 1, content: "Line a baking sheet with aluminum foil. Lay out the sweet potato, chicken breasts, and broccoli.", recipe_id: panchicken.id},
+  {number: 2, content: "Evenly distribute the garlic, rosemary, paprika, salt, and pepper over the entire pan. Drizzle with olive oil.", recipe_id: panchicken.id},
+  {number: 3, content: "Bake at 400°F (200°C) for 35-40 minutes (or until the internal temperature of the chicken reaches 165°F (75°C) and the juices run clear).", recipe_id: panchicken.id},
+  {number: 4, content: "Serve up and dinner’s ready! For an easy cleanup, just carefully toss the aluminum foil and you’re good to go.", recipe_id: panchicken.id},
+  {number: 5, content: "Enjoy!", recipe_id: panchicken.id},
+  ])
+
+
+#recipe 9
+
+penne = Recipe.new(
+  name: "Easy Chicken Alfredo Penne",
+  video: File.open("./app/assets/images/alfredo.mp4"),
+  image: File.open("./app/assets/images/chicken.jpg"),
+  desc: "Fast and delicious chicken alfredo penne.",
+  prep_time: 10,
+  cook_time: 25,
+)
+
+penne.user = chen
+  penne.save!
+
+chicken = Item.create!({name: 'Boneless Chicken Breasts', amount_cents: '499', image: File.open('./app/assets/images/ingredients/syrup.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: chicken.id, recipe: penne})
+
+butter = Item.create!({name: 'Salted Butter', amount_cents: '399', image: File.open('./app/assets/images/ingredients/butter.jpg'), condiment: 'TRUE'})
+Ingredient.create!({ item_id: butter.id, recipe: penne})
+
+oregano = Item.create!({name: 'Dried Oregano', amount_cents: '299', image: File.open('./app/assets/images/oregano.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: oregano.id, recipe: penne})
+
+basil = Item.create!({name: 'Basil', amount_cents: '199', image: File.open('./app/assets/images/ingredients/basil.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: basil.id, recipe: penne})
+
+salt = Item.create!({name: 'Salt', amount_cents: '99', image: File.open('./app/assets/images/salt.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: salt.id, recipe: penne})
+
+pepper = Item.create!({name: 'Pepper', amount_cents: '99', image: File.open('./app/assets/images/pepper.jpeg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: pepper.id, recipe: penne})
+
+pasta = Item.create!({name: 'Pasta', amount_cents: '199', image: File.open('./app/assets/images/ingredients/penne.jpg'), condiment: 'FALSE'})
+Ingredient.create!({ item_id: pasta.id, recipe: penne})
+
+# direcountions
+penne_steps = Step.create!([
+  {number: 1, content: "In a pan over medium-high heat, melt butter, then add the chicken breast.", recipe_id: penne.id},
+  {number: 2, content: "Season with salt, pepper, oregano, and basil. Cook 8-10 minutes or until chicken is fully cooked. Remove from heat and set chicken aside.", recipe_id: penne.id},
+  {number: 3, content: "In the same pan over medium heat, melt butter and add the garlic. Cook until the garlic begins to soften.", recipe_id: penne.id},
+  {number: 4, content: "Add half of the flour to the garlic and butter, stirring until incorporated. Then add the rest of the flour and stir.", recipe_id: penne.id},
+  {number: 5, content: "Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.", recipe_id: penne.id},
+  {number: 6, content: "Season with salt, pepper, oregano, and basil, and stir well to incorporate..", recipe_id: penne.id},
+  {number: 7, content: "Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.", recipe_id: penne.id},
+  {number: 8, content: "Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.", recipe_id: penne.id},
+  {number: 9, content: "Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.", recipe_id: penne.id},
+  {number: 10, content: "Pour in the milk a little bit at a time, stirring well in between, until fully incorporated and sauce begins to thicken.", recipe_id: penne.id}
+  ])
+
 
 
 
