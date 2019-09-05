@@ -236,24 +236,41 @@
 
 .zoom {
   position: absolute;
-  top: 30px;
-  right: 50%;
-  width: 40px;
-  opacity: 0;
+  // right: 50%;
   z-index: 1000000000000;
-  animation: zoom 1s ease forwards;
 }
 @keyframes zoom {
   0% {
-    opacity: 0;
-  }
-
-  50% {
     opacity: 1;
+    width: 100px;
+
   }
 
   100% {
     opacity: 0;
-    right: 40px;
+    top: 18px;
+    left: 1700px;
+    width: 0%;
   }
 }
+// .zoom {
+//   position: absolute;
+//   // right: 50%;
+//   z-index: 1000000000000;
+//   animation: zoom 4s ease forwards;
+// }
+// @keyframes zoom {
+//   0% {
+//     opacity: 1;
+//     width: 100px;
+//     top: 300px;
+//     left: 1200px;
+//   }
+//
+//   100% {
+//     opacity: 0;
+//     top: 18px;
+//     left: 1700px;
+//     width: 0%;
+//   }
+// }
