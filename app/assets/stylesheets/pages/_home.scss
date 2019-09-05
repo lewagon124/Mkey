@@ -24,6 +24,17 @@
   }
 }
 
+.card {
+  box-shadow: 1px 1px 5px #e6e6e6;
+  border: 0px;
+  margin-bottom: 48px;
+}
+
+.mb-2 {
+  margin-bottom: 48px !important;
+}
+
+
 #recipes-btn {
   display: flex;
   justify-content: center;
@@ -133,10 +144,10 @@
   display: flex;
   max-width: 330px;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230,230,230);
+  box-shadow: 1px 1px 5px #e6e6e6;
   text-align: center;
   padding: 20px;
-  border: 1px solid rgb(230,230,230);
+  // border: 1px solid rgb(230,230,230);
   margin: 0px auto;
   background: white;
 }
