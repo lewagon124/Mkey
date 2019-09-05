@@ -1,5 +1,30 @@
 /*==================================================================
+[ All recipes page ]*/
+
+.show-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  margin: 0 auto;
+
+  .recipes-btn {
+    background-color: $light;
+    color: $med;
+    text-align: center;
+    font-family: $my-font;
+    font-weight: 900;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 4px;
+    padding: 5px;
+    width: 30%;
+  }
+}
+/*==================================================================
 [ Video Banner ]*/
+
 .banner {
   position: relative;
   width: 100vw;
@@ -9,8 +34,8 @@
   justify-content: center;
   overflow: hidden;
 }
-.banner h1{
 
+.banner h1 {
   text-align: center;
   font-size: 9rem;
   color: white;
@@ -18,9 +43,9 @@
   // opacity: 0.5;
   z-index: 1;
 
-  p{
-  font-size: 50px;
-  color: white;
+  p {
+    font-size: 50px;
+    color: white;
   }
 }
 
@@ -29,7 +54,6 @@
   justify-content: center;
   align-items: center;
   // float: right;
-
   a {
     font-family: $my-font;
     font-weight: bolder;
@@ -43,9 +67,7 @@
       border-radius: 4px;
     }
   }
-
 }
-
 // .video-container{
 //   position: absolute;
 //   top: 0;
@@ -54,17 +76,16 @@
 //   height: 100vh;
 // }
 
-.video-overlay{
+.video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   opacity: 0.5;
-  background: radial-gradient(circle, rgba(0, 0, 0, 1), rgba(100, 100, 100, 0.1) );
+  background: radial-gradient(circle, rgba(0, 0, 0, 1), rgba(100, 100, 100, 0.1));
   z-index: 1;
 }
-
 // #myVideo{
 //   top: 0;
 //   left: 0;
@@ -85,40 +106,33 @@
   /* Make video to at least 100% wide and tall */
   min-width: 100%;
   min-height: 100%;
-
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
   width: auto;
   height: auto;
-
   /* Center the video */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-
-
 /*==================================================================
 [ Recipt Carouse ]*/
-
-
-.carousel-1, .carousel-2 {
+.carousel-1,
+.carousel-2 {
   padding-left: 150px;
   padding-right: 150px;
 }
 
-.col-md-4{
-  margin: 0px;
+.col-md-4 {
+  margin: 0;
 }
-
 /*==================================================================
 [ Hiw it works section ]*/
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700|Quicksand');
 
 .hiw-container {
-    margin: 30px auto;
-    max-width: 1200px;
+  margin: 30px auto;
+  max-width: 1200px;
 }
 
 .text-center {
@@ -126,7 +140,7 @@
 }
 
 .hiw-card p {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .hiw-card {
@@ -137,10 +151,9 @@
   text-align: center;
   padding: 20px;
   border: 1px solid rgb(230,230,230);
-  margin: 0px auto;
+  margin: 0 auto;
   background: white;
 }
-
 
 .hiw-cards {
   display: grid;
@@ -150,28 +163,31 @@
   margin-bottom: 30px;
 }
 
-.hiw-container-img{
+.hiw-container-img {
   display: flex;
   justify-content: center;
   max-height: 210px;
   /* transform: translateY(20%); */
 }
 
-.btn-learn{
+.btn-learn {
   background-color: #FF5E68;
   color: white;
   border-radius: 15px;
   padding: 5px 15px;
   font-size: 20px;
 }
-
 /* Utilities */
+
 p {
   font-family: Quicksand;
   font-size: 20px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: $my-font;
   font-weight: bolder;
   color: $med;
@@ -183,8 +199,6 @@ a {
   font-family: Quicksand;
 }
 
-
-
 .hiw-container-img img {
   max-height: 170px;
 }
@@ -192,20 +206,19 @@ a {
 h4 {
   font-size: 20px;
 }
-
 @media (max-width: 920px) {
   .cards {
     grid-template-columns: 1fr;
   }
-  .container{
-    max-width: 800px;
 
+  .container {
+    max-width: 800px;
   }
-  .card{
+
+  .card {
     max-width: 500px;
   }
 }
-
 // Specific CSS for your home-page
 // MODAL STARTS HERE //
 
@@ -285,7 +298,6 @@ html {
   font-family: SourceSansPro-Regular, sans-serif;
 }
 /*---------------------------------------------*/
-
 a {
   font-family: SourceSansPro-Regular;
   font-size: 14px;
@@ -306,7 +318,6 @@ a:hover {
   text-decoration: none;
 }
 /*---------------------------------------------*/
-
 h1,
 h2,
 h3,
@@ -330,7 +341,6 @@ ul {
   list-style-type: none;
 }
 /*---------------------------------------------*/
-
 input {
   outline: none;
   border: none;
@@ -378,7 +388,6 @@ textarea:-ms-input-placeholder {
   color: #4b2354;
 }
 /*---------------------------------------------*/
-
 button {
   outline: none !important;
   border: none;
@@ -477,6 +486,7 @@ iframe {
 }
 /*==================================================================
 [ Form ]*/
+
 .login100-form {
   width: 100%;
 }
@@ -491,6 +501,7 @@ iframe {
 }
 /*------------------------------------------------------------------
 [ Input ]*/
+
 .wrap-input100 {
   width: 100%;
   position: relative;
@@ -511,6 +522,7 @@ iframe {
 }
 /*------------------------------------------------------------------
 [ Focus Input ]*/
+
 .focus-input100 {
   display: block;
   position: absolute;
@@ -540,7 +552,6 @@ iframe {
 }
 /*------------------------------------------------------------------
 [ Button ]*/
-
 .container-login100-form-btn {
   width: 100%;
   display: -webkit-box;
@@ -591,6 +602,7 @@ iframe {
 }
 /*------------------------------------------------------------------
 [ Alert validate ]*/
+
 .validate-input {
   position: relative;
 }

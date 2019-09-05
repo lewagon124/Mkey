@@ -120,20 +120,22 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	border: 4px solid transparent;
-	margin-bottom: 0;
+	margin-bottom: 3px;
 	outline: 0;
   height: 100px;
   width: 100px;
   // display: flex;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
 }
+
 .image-checkbox input[type="checkbox"] {
 	display: none;
 }
 
 .image-checkbox-checked {
-	border-color: #4783B0;
+	border-color: #f8c25e;
 }
 // .image-checkbox .fa {
 //   position: absolute;
@@ -245,4 +247,3 @@ hr {
  50%{opacity: 1}
  100%{opacity: 0; right: 40px}
 }
-

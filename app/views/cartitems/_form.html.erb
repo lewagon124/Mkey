@@ -2,15 +2,19 @@
 <%= form_tag recipe_multi_create_path(@recipe), remote: true, class: "add-cart-items-form" do %>
   <% @recipe.ingredients.each do |ingredient| %>
     <% if ingredient.item.condiment || local_assigns[:subsecquent_submit] %>
+    <!-- <section class="image-checkbox-container"> -->
       <label class="image-checkbox">
         <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
         <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.item.id %>" data-price-cents="<%= ingredient.item.amount %>"/>
       </label>
+    <!-- </section> -->
     <% else %>
+    <!-- <section class="image-checkbox-container"> -->
       <label class="image-checkbox image-checkbox-checked">
         <img class='ingredient-image' src="<%=ingredient.item.image_url%>" alt="<%= ingredient.item.name %>">
         <input type="checkbox" checked name="ingredient_id[]" value="<%= ingredient.item.id %>" data-price-cents="<%= ingredient.item.amount %>"/>
       </label>
+    <!-- </section> -->
       <% @sum +=ingredient.item.amount %>
     <% end %>
 
