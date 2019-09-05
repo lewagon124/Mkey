@@ -20,15 +20,18 @@ class PaymentsController < ApplicationController
 
   redirect_to cart_payments_path
 
+
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_cart_payment_path(@cart)
   end
 
   def index
+
     @user=current_user
     @cart=Cart.find(params[:cart_id])
     @confirmation=@cart.id
+    # raise
     current_user.empty_cart
     @cart.destroy!
   end
