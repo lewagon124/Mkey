@@ -1,7 +1,9 @@
 
 /*==================================================================
 [ All recipes page ]*/
-
+.card-text {
+  font-family: $my-font;
+}
 .show-btn {
   display: flex;
   flex-direction: row;

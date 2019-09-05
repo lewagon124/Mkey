@@ -1,8 +1,10 @@
 <% if @recipes.present? %>
   <% @recipes.each do |recipe| %>
-    <% recipe.name %>
-    <% recipe.video %>
-    <% recipe.desc %>
+    <%= recipe.name %>
+    <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
+      <source src="<%= recipe.video %>" type="video/mp4">
+    </video>
+    <%= recipe.desc %>
   <% end %>
 <% else %>
     <p>No Search Results</p>
