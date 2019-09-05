@@ -30,16 +30,20 @@
     font-family: $my-font;
   }
 
-  .ingredient-name-container{
+  .ingredient-name-container {
     padding: 18px 28px;
   }
 
   .ingredient-container {
-    display:block;
+    display: block;
     padding: 8px;
+
     .ingredient-image {
-      max-height: 100%;
-      max-width: 100%;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      // max-height: 100%;
+      // max-width: 100%;
       // border-radius: 50%;
       // border: 5px solid;
     }
@@ -61,107 +65,102 @@
       font-size: 16px;
       border-radius: 4px;
       padding: 5px;
-      margin: 0px 20px;
+      margin: 0 20px;
       width: 50%;
     }
+
     .cart-btn {
       background: $med;
       color: white;
       border-radius: 4px;
       padding: 5px;
-      margin: 0px 20px;
+      margin: 0 20px;
       width: 50%;
-
+    }
   }
-}
 
-.prep {
-  padding: 44px 0px 16px 0px;
-
-}
-
-
-.checkout {
-  cursor: pointer;
-  padding: 5px 95px;
-  color: white;
-  background-color: $mokey;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: $my-font;
-  width: 394px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.check {
-  margin-top: 30px;
-  text-align: center;
-  font-family: $my-font;
-  justify-content: space-between;
-  align-items: center;
-  // display: flex;
-  // align-items: center;
-}
-
-.directions {
-  padding-left: 28px;
-  li {
-    padding-bottom: 4px;
+  .prep {
+    padding: 44px 0 16px;
   }
-}
 
-// insert css from https://codepen.io/kskhr/pen/pRwKjg
-
-/*image gallery*/
-.image-checkbox {
-	cursor: pointer;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	border: 4px solid transparent;
-	margin-bottom: 3px;
-	outline: 0;
-  height: 100px;
-  width: 100px;
-  // display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.image-checkbox input[type="checkbox"] {
-	display: none;
-}
-
-.image-checkbox-checked {
-	border-color: #f8c25e;
-}
-// .image-checkbox .fa {
-//   position: absolute;
-//   color: #4A79A3;
-//   background-color: #fff;
-//   padding: 10px;
-//   top: 0;
-//   right: 0;
-// }
-// .image-checkbox-checked .fa {
-//   display: block !important;
-// }
-
-.item-ingredient {
-
-  li {
-    padding-bottom: 4px;
+  .checkout {
+    cursor: pointer;
+    padding: 5px 95px;
+    color: white;
+    background-color: $mokey;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: $my-font;
+    width: 394px;
+    justify-content: space-between;
+    align-items: center;
   }
-}
 
+  .check {
+    margin-top: 30px;
+    text-align: center;
+    font-family: $my-font;
+    justify-content: space-between;
+    align-items: center;
+    // display: flex;
+    // align-items: center;
+  }
 
-hr {
-  border-top: 1px solid $mokey;
-  width: 75%;
-  margin: 0 auto;
-}
+  .directions {
+    padding-left: 28px;
+
+    li {
+      padding-bottom: 4px;
+    }
+  }
+  // insert css from https://codepen.io/kskhr/pen/pRwKjg
+  /*image gallery*/
+  .image-checkbox {
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 4px solid transparent;
+    margin-bottom: 3px;
+    outline: 0;
+    height: 100px;
+    width: 100px;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .image-checkbox input[type="checkbox"] {
+    display: none;
+  }
+
+  .image-checkbox-checked {
+    border-color: #f8c25e;
+  }
+  // .image-checkbox .fa {
+  //   position: absolute;
+  //   color: #4A79A3;
+  //   background-color: #fff;
+  //   padding: 10px;
+  //   top: 0;
+  //   right: 0;
+  // }
+  // .image-checkbox-checked .fa {
+  //   display: block !important;
+  // }
+
+  .item-ingredient {
+    li {
+      padding-bottom: 4px;
+    }
+  }
+
+  hr {
+    border-top: 1px solid $mokey;
+    width: 75%;
+    margin: 0 auto;
+  }
 
   div {
     // height: 100vh;
@@ -213,37 +212,48 @@ hr {
 }
 
 #recipes-btn {
- display: flex;
- justify-content: center;
- align-items: center;
- // float: right;
- a {
-   padding: 5px 20px;
-   border-radius: 4px;
-   font-family: $my-font;
-   font-weight: bolder;
-   color:white;
-   font-size: 30px;
-   background-color:  $mokey;
-   &:hover {
-     padding: 5px 20px;
-     background: $med;
-     color: $light;
-     border-radius: 4px;
-   }
- }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // float: right;
+  a {
+    padding: 5px 20px;
+    border-radius: 4px;
+    font-family: $my-font;
+    font-weight: bolder;
+    color: white;
+    font-size: 30px;
+    background-color: $mokey;
+
+    &:hover {
+      padding: 5px 20px;
+      background: $med;
+      color: $light;
+      border-radius: 4px;
+    }
+  }
 }
-.zoom{
- position: absolute;
- top:30px;
- right: 50%;
- width: 40px;
- opacity: 0;
- z-index:1000000000000;
- animation: zoom 1s ease forwards;
+
+.zoom {
+  position: absolute;
+  top: 30px;
+  right: 50%;
+  width: 40px;
+  opacity: 0;
+  z-index: 1000000000000;
+  animation: zoom 1s ease forwards;
 }
-@keyframes zoom{
- 0%{opacity: 0}
- 50%{opacity: 1}
- 100%{opacity: 0; right: 40px}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 40px;
+  }
 }
