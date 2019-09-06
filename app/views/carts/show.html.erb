@@ -16,7 +16,7 @@
             <div class="row-items">
               <%@cartitems.each do |cartitem|%>
                 <div class="card-item">
-                  <div><%=image_tag cartitem.item.image_url, width: "100" %></div>
+                  <div class = "checkout-image-container"><%=image_tag cartitem.item.image_url, class: "checkout-image" %></div>
                   <li><%=cartitem.item.name %></li>
                   <li><%=cartitem.quantity %></li>
                   <li><%= cartitem.item.amount * cartitem.quantity %></li>
