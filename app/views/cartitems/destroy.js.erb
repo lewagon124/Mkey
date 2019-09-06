@@ -1,0 +1,5 @@
+cartitem = document.querySelector(".card-item[data-cart-item-id='<%= @cartitem.id %>']");
+cartitem.remove();
+
+navbar = document.getElementById("navbar");
+navbar.innerHTML = "<%= j render 'shared/navbar'%>";

@@ -38,7 +38,7 @@
     <div class="text2">
       <h4 class="ingredient recipe-page-title">Preparation</h4>
       <ol class="directions">
-        <% @recipe.steps.each do |step| %>
+        <% @recipe.steps.sort.each do |step| %>
           <li><%= step.number%>
             -
             <%= step.content%>

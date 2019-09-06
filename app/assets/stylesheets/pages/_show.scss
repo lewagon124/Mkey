@@ -26,7 +26,7 @@
   width: 50%;
 
   .recipe-page-title {
-    padding: 16px 28px;
+    padding: 16px 24px;
     font-family: $my-font;
   }
 
@@ -36,7 +36,7 @@
 
   .ingredient-container {
     display: block;
-    padding: 8px;
+    padding: 8px 8px 8px 20px;
 
     .ingredient-image {
       height: 100%;
@@ -46,6 +46,7 @@
       // max-width: 100%;
       // border-radius: 50%;
       // border: 5px solid;
+
     }
   }
 
@@ -129,6 +130,7 @@
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+
   }
 
   .image-checkbox input[type="checkbox"] {
@@ -200,6 +202,9 @@
 
 .text2 {
   background: white;
+  // h4 {
+  //   padding-left: 24px;
+  // }
 }
 
 .text3 {
