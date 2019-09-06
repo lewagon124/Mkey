@@ -106,7 +106,7 @@ Ingredient.create!({ item_id: salt.id, recipe: hashbrown, quantity:"4 oz"})
 p "Chocolate Bread"
 chocobread = Recipe.new(
   name: "Chocolate Bread",
-  video: File.open("./app/assets/images/recipes/chocobread.mp4"),
+  remote_video_url: "https://res.cloudinary.com/dcx3pu4fx/video/upload/v1567787028/chocobread_f8nncw.mp4",
   image: File.open("./app/assets/images/recipes/chocobread.png"),
   desc: "Flaky puff pastry filled with chocolate-hazelnut.",
   prep_time: 8,
@@ -118,12 +118,10 @@ chocobread.user = chen
 
 # direcountions
 chocobread_steps = Step.create!([
-  {number: 1, content: "Spread the chocolate hazelnut spread evenly over 1 puff pastry sheet, leaving a ¼-inch (6 mm) border all around. ", recipe_id: chocobread.id},
-  {number: 2, content: "Preheat the oven to 400˚F (200˚C). Grease a baking sheet with nonstick spray ", recipe_id: chocobread.id},
-  {number: 3, content: "Take 1 square and make 5 even cuts crosswise across the center. Do not cut all the way through the edges. ", recipe_id: chocobread.id},
-  {number: 4, content: "Transfer the braids to the prepared baking sheet and brush with egg wash. ", recipe_id: chocobread.id},
-  {number: 5, content: "Bake for 14 minutes, or until golden brown. ", recipe_id: chocobread.id},
-  {number: 6, content: "Enjoy ", recipe_id: chocobread.id}
+  {number: 1, content: "Spread the chocolate hazelnut spread evenly over 1 puff pastry sheet. Preheat the oven to 400˚F (200˚C). ", recipe_id: chocobread.id},
+  {number: 2, content: "Take 1 square and make 5 even cuts crosswise across the center.", recipe_id: chocobread.id},
+  {number: 3, content: "Transfer the braids to the prepared baking sheet and brush with egg wash. Bake for 14 minutes, or until golden brown. ", recipe_id: chocobread.id},
+  {number: 4, content: "Enjoy ", recipe_id: chocobread.id}
   ])
 
 # ingredients
@@ -156,12 +154,10 @@ pasta.user = chen
 
 # direcountions
 pasta_steps = Step.create!([
-  {number: 1, content: "Add the mozzarella to a bowl and microwave for 1-2 minutes, until melted. ", recipe_id: pasta.id},
-  {number: 2, content: "With a spatula, gently fold the egg yolk into the cheese. ", recipe_id: pasta.id},
-  {number: 3, content: "Place another piece of parchment paper on top of the dough and press down with your hand until thin. ", recipe_id: pasta.id},
-  {number: 4, content: "Remove the top piece of parchment and cut the dough into thin strips. Place the “pasta” in boiling water for one minute. ", recipe_id: pasta.id},
-  {number: 5, content: "Drain into a colander and run cool water over the pasta to prevent sticking. ", recipe_id: pasta.id},
-  {number: 6, content: "Serve with your favorite sauce. ", recipe_id: pasta.id}
+  {number: 1, content: "Add the mozzarella to a bowl and microwave for 1-2 minutes. Gently fold the egg yolk into the cheese. ", recipe_id: pasta.id},
+  {number: 2, content: "Place another piece of parchment paper on top of the dough and press down with your hand until thin.Cut the dough into thin strips. Place the “pasta” in boiling water for one minute. ", recipe_id: pasta.id},
+  {number: 3, content: "Drain into a colander and run cool water over the pasta to prevent sticking. ", recipe_id: pasta.id},
+  {number: 4, content: "Serve with your favorite sauce. ", recipe_id: pasta.id}
   ])
 
 egg = Item.create!({name: 'Eggs', amount_cents: '329', image: File.open('./app/assets/images/ingredients/eggs.jpg'), condiment: 'FALSE'})

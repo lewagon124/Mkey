@@ -22,11 +22,16 @@
     <!-- Shopping Cart -->
     <div>
         <li class="nav-item item shopping-cart">
+          <% cart_count = current_user.current_cart.cartitems.reduce(0) { |sum, num| sum + num.quantity } %>
 
-          <%= link_to cart_path(current_user.current_cart), class: "nav-link" do%>
-            <i data-count="<%= current_user.current_cart.cartitems.reduce(0) { |sum, num| sum + num.quantity } %>" class="fa fa-shopping-cart icon-white badge"></i>
-
-          <% end %>
+          <%= link_to cart_path(current_user.current_cart), class: "nav-link" do %>
+            <% if cart_count > 0 %>
+              <div class="my-badge"><%= cart_count %></div>
+              <i class="fa fa-shopping-cart icon-white"></i>
+            <% else %>
+              <i class="fa fa-shopping-cart icon-white"></i>
+            <% end %>
+            <% end %>
         </li>
     </div>
 

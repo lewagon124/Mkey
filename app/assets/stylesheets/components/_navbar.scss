@@ -91,6 +91,7 @@
 // Shopping cart insert css from https://codepen.io/hughker/pen/PzZOQP
 
 .shopping-cart {
+  position:relative;
   .fa-shopping-cart {
     font-size: 34px;
   }
@@ -114,21 +115,37 @@
     position: relative;
   }
 
-  .badge:after {
-    content: attr(data-count);
-    position: absolute;
-    background: #ff5e61;
-    height: 1.5rem;
-    top: 0;
-    right: 2.5rem;
-    width: 1.5rem;
-    text-align: center;
-    line-height: 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 50%;
-    color: white;
-    /* border: 1px solid #ff6600; */
-    font-family: sans-serif;
-    font-weight: bold;
-  }
+//   .badge:after {
+//     content: attr(data-count);
+//     position: absolute;
+//     background: #ff5e61;
+//     height: 1.5rem;
+//     top: 0;
+//     right: 2.5rem;
+//     width: 1.5rem;
+//     text-align: center;
+//     line-height: 1.5rem;
+//     font-size: 1.1rem;
+//     border-radius: 50%;
+//     color: white;
+//     /* border: 1px solid #ff6600; */
+//     font-family: sans-serif;
+//     font-weight: bold;
+//   }
+}
+.my-badge {
+  right: 29px;
+  top: 0px;
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-family: Raleway;
+  padding-bottom: 3px;
 }

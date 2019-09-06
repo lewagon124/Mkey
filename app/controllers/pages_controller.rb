@@ -5,6 +5,6 @@ class PagesController < ApplicationController
       format.html
       format.js
     end
-    @recipes = Recipe.all
+    @recipes = Recipe.order(:created_at)
   end
 end
