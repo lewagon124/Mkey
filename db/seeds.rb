@@ -106,7 +106,7 @@ Ingredient.create!({ item_id: salt.id, recipe: hashbrown, quantity:"4 oz"})
 p "Chocolate Bread"
 chocobread = Recipe.new(
   name: "Chocolate Bread",
-  video: File.open("./app/assets/images/recipes/chocobread.mp4"),
+  remote_video_url: "https://res.cloudinary.com/dcx3pu4fx/video/upload/v1567787028/chocobread_f8nncw.mp4",
   image: File.open("./app/assets/images/recipes/chocobread.png"),
   desc: "Flaky puff pastry filled with chocolate-hazelnut.",
   prep_time: 8,
