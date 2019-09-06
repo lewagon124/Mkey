@@ -64,6 +64,31 @@ const calculateAndDisplayCartItemPrice = () => {
 window.setupDynamicPriceForCartItemsForm = setupDynamicPriceForCartItemsForm;
 
 setupDynamicPriceForCartItemsForm();
+
+
+const initAnimationOfIngredientImage = () => {
+  document.querySelector("input[type='submit']").addEventListener("click", () => {
+    document.querySelectorAll(".image-checkbox-checked > img").forEach((image) => {
+      const $image = $(image);
+
+      $image.clone()
+        .addClass("zoom")
+        .css("top", `${image.offsetTop}px`)
+        .css("left", `${image.offsetLeft}px`)
+        .css("animation", "zoom 1s ease forwards")
+        .appendTo("body")
+
+      setTimeout(() => { $(".zoom").remove() },2000);
+    });
+  });
+}
+
+window.initAnimationOfIngredientImage = initAnimationOfIngredientImage
+initAnimationOfIngredientImage();
+
+
+
+
 // slow the video
 var videos = document.querySelectorAll(".video-fluid")
 
