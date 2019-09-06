@@ -15,13 +15,13 @@
 
             <div class="row-items">
               <%@cartitems.each do |cartitem|%>
-                <div class="card-item">
+                <div class="card-item" data-cart-item-id="<%= cartitem.id %>">
                   <div><%=image_tag cartitem.item.image_url, width: "100" %></div>
                   <li><%=cartitem.item.name %></li>
                   <li><%=cartitem.quantity %></li>
                   <li><%= cartitem.item.amount * cartitem.quantity %></li>
                   <% @sum = @sum + cartitem.item.amount * cartitem.quantity%>
-                  <%=link_to "Delete", cartitem_path(cartitem.id), :class=>"remove-button", method: :delete %>
+                  <%=link_to "Delete", cartitem_path(cartitem.id), :class=>"remove-button", method: :delete, remote: true %>
                 </div>
               <% end %>
             </div>
