@@ -3,6 +3,17 @@ body {
   background: white;
 }
 
+.checkout-image-container {
+  height: 100px;
+  width: 100px;
+
+  .checkout-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 .menu {
   // background: $light;
   border-bottom: 1px solid $light;
@@ -11,7 +22,7 @@ body {
   align-items: center;
   font-size: 16px;
   color: $light;
-  padding: 12px 0px;
+  padding: 12px 0;
 }
 
 .menu-title {
@@ -21,7 +32,7 @@ body {
 
 .shopping {
   text-align: center;
-  padding: 50px 0px;
+  padding: 50px 0;
   font-size: 36px;
 }
 
@@ -40,7 +51,7 @@ body {
   height: 120px;
   color: $med;
   // border-bottom: 1px solid #FFFFFF;
-  padding: 20px, 0px;
+  padding: 20px, 0;
 }
 // .item-info {
 //   display: flex;
@@ -66,7 +77,6 @@ body {
 }
 
 .cart-cost {
-
   p {
     font-size: 16px;
     font-family: $my-font;
@@ -76,7 +86,7 @@ body {
 .cost {
   display: flex;
   justify-content: space-between;
-  padding: 0px 18px;
+  padding: 0 18px;
 }
 
 .itemcart {
@@ -91,7 +101,6 @@ body {
   }
 }
 
-
 .cart-cost {
   border: 1px solid $light;
   width: 300px;
@@ -100,7 +109,7 @@ body {
 
   h4 {
     text-align: center;
-    padding: 18px 0px;
+    padding: 18px 0;
   }
 }
 

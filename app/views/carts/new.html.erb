@@ -10,7 +10,7 @@
         <li>Sub Total</li>5
       </div>
       <div class="row">
-        <li><img src="<%= @cartitem.item.image%>" alt=""></li>
+        <li><img src="<%= @cartitem.item.image%>" alt="" class></li>
         <li><%=@cartitem.item.name %></li>
         <li><%=@cartitem.quantity %></li>
         <li><%=@cartitem.item.amount%></li>
@@ -33,4 +33,3 @@
   </ul>
   <% link_to "Checkout",  new_cart_path%>
 </div>
-
