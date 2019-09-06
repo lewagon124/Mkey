@@ -17,6 +17,7 @@ chen = User.create(
 )
 
 # Recipe 1
+  p "Pasta Chicken Salad"
 chicken = Recipe.new(
   name: "Pasta Chicken Salad",
   video: File.open("./app/assets/images/recipes/recipe_chicken.mp4"),
@@ -60,6 +61,7 @@ farfalle = Item.create!({name: 'Farfalle Pasta', amount_cents: '525', image: Fil
 Ingredient.create!({ item_id: farfalle.id, recipe: chicken, quantity:"4 cups"})
 
 # Recipe 2
+p "Hash-Brown Waffles"
 hashbrown = Recipe.new(
   name: "Hash-Brown Waffles",
   video: File.open("./app/assets/images/recipes/hashbrown.mp4"),
@@ -101,6 +103,7 @@ Ingredient.create!({ item_id: salt.id, recipe: hashbrown, quantity:"4 oz"})
 
 
 # recipe #3
+p "Chocolate Bread"
 chocobread = Recipe.new(
   name: "Chocolate Bread",
   video: File.open("./app/assets/images/recipes/chocobread.mp4"),
@@ -138,6 +141,7 @@ Ingredient.create!({ item_id: spray.id, recipe: chocobread, quantity:"1/2 cup"})
 
 
 #recipe #4
+p "2-Ingredient low carb pasta"
 pasta = Recipe.new(
   name: "2-Ingredient low carb pasta",
   video: File.open("./app/assets/images/recipes/mozzarella.mp4"),
@@ -167,10 +171,11 @@ mozzarella = Item.create!({name: 'Shredded Mozzarella Cheese', amount_cents: '59
 Ingredient.create!({ item_id: mozzarella.id, recipe: pasta})
 
 
-# recipe #5
+# recipe
+p "Cucumber, Tomato, and Avocado Salad"#5
 salad = Recipe.new(
   name: "Cucumber, Tomato, and Avocado Salad",
-  video: File.open("./app/assets/images/recipes/salad.mp4"),
+  remote_video_url: "https://res.cloudinary.com/dcx3pu4fx/video/upload/v1567776029/salad_bx0fdu.mp4",
   image: File.open("./app/assets/images/recipes/salad.png"),
   desc: "A delish salad to enjoy all year.",
   prep_time: 12,
@@ -178,7 +183,7 @@ salad = Recipe.new(
 )
 
 salad.user = chen
-  salad.save!
+salad.save!
 
 # direcountions
 salad_steps = Step.create!([
@@ -210,6 +215,7 @@ Ingredient.create!({ item_id: salt.id, recipe: salad, quantity:"3 oz"})
 
 
 # recipe 6
+p "Maple-Glazed Salmon"
 salmon = Recipe.new(
   name: "Maple-Glazed Salmon",
   video: File.open("./app/assets/images/recipes/salmon.mp4"),
@@ -263,7 +269,15 @@ For the broccoli, fill a medium pot halfway with water. Add a dash of salt and s
   {number: 6, content: "Enjoy ", recipe_id: salmon.id}
   ])
 
-mac = Recipe.new(name: "3 ingredient Mac & Cheese", video: File.open("./app/assets/images/chicken.mp4"), image: File.open('./app/assets/images/macandcheese.jpg'), desc: "Easy delicious 3 ingredients dinner.", prep_time: 5, cook_time: 15, user: chen )
+p "3 ingredient Mac & Cheese"
+mac = Recipe.new(
+  name: "3 ingredient Mac & Cheese",
+  video: File.open("./app/assets/images/mac.mp4"),
+  image: File.open('./app/assets/images/macandcheese.jpg'),
+  desc: "Easy delicious 3 ingredients dinner.",
+  prep_time: 5,
+  cook_time: 15,
+  user: chen )
 
 # binding.pry
 # mac.user = chen
@@ -288,10 +302,10 @@ mac_steps = Step.create!([
 
 
 #recipe 8
-
+p "One Pan Chicken And Veggies"
 panchicken = Recipe.new(
   name: "One Pan Chicken And Veggies",
-  video: File.open("./app/assets/images/chicken.mp4"),
+  remote_video_url: "https://res.cloudinary.com/dcx3pu4fx/video/upload/v1567776056/chicken_yjxka5.mp4",
   image: File.open("./app/assets/images/chickenveg.jpg"),
   desc: "Fast and delicious one pan chicken and veggies.",
   prep_time: 20,
@@ -339,10 +353,10 @@ panchicken_steps = Step.create!([
 
 
 #recipe 9
-
+p "Easy Chicken Alfredo Penne"
 penne = Recipe.new(
   name: "Easy Chicken Alfredo Penne",
-  video: File.open("./app/assets/images/alfredo.mp4"),
+  remote_video_url: "https://res.cloudinary.com/dcx3pu4fx/video/upload/v1567776071/alfredo_ae7na1.mp4",
   image: File.open("./app/assets/images/chicken.jpg"),
   desc: "Fast and delicious chicken alfredo penne.",
   prep_time: 10,
