@@ -238,6 +238,38 @@
     }
   }
 }
+.search {
+  text-align: center;
+  font-family: "Raleway";
+
+  .recipe-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+    color: #434343;
+  }
+  .recipe-description {
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+
+  a {
+    font-size: 16px;
+    padding: 8px 40px;
+    background: $mokey;
+    color: white;
+    border-radius: 4px;
+  }
+
+  video {
+    padding-top: 24px;
+  }
+
+}
+
+
+
+
 
 .zoom {
   position: absolute;
@@ -258,6 +290,8 @@
     width: 0%;
   }
 }
+
+
 // .zoom {
 //   position: absolute;
 //   // right: 50%;

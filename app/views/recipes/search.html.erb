@@ -1,11 +1,19 @@
-<% if @recipes.present? %>
-  <% @recipes.each do |recipe| %>
-    <%= recipe.name %>
-    <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
-      <source src="<%= recipe.video %>" type="video/mp4">
-    </video>
-    <%= recipe.desc %>
+<div class="search">
+  <% if @recipes.present? %>
+    <% @recipes.each do |recipe| %>
+      <p class="recipe-title"><%= recipe.name %></p>
+      <p class="recipe-description"><%= recipe.desc %></p>
+      <div class="full-recipe">
+        <%= link_to "See full recipe", recipe_path(recipe.id, class: "full")%>
+      </div>
+      <video autoplay="autoplay" muted="muted" loop="loop" id="myVideo">
+        <source src="<%= recipe.video %>" type="video/mp4">
+      </video>
+
+    <% end %>
+  <% else %>
+      <p>No Search Results</p>
   <% end %>
-<% else %>
-    <p>No Search Results</p>
-<% end %>
+</div>
+
+
